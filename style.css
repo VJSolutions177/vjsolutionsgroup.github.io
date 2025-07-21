@@ -1,102 +1,63 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #0d0d0d;
-  color: #f1c40f;
-  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 header {
-  background: #1a1a1a;
-  padding: 20px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-header .logo {
-  text-align: center;
-  font-size: 28px;
-  font-weight: bold;
-  animation: fadeInDown 1s ease-in-out;
-}
-
-nav ul {
+  background-color: #000;
+  color: white;
+  padding: 20px 40px;
   display: flex;
-  justify-content: center;
-  padding: 0;
-  list-style: none;
-  margin: 10px 0 0;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #f1c40f;
+.logo {
+  font-size: 24px;
   font-weight: 600;
+  color: gold;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1556761175-129418cb2dfe') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
 }
 
 section {
-  padding: 60px 20px;
-  max-width: 800px;
+  padding: 60px 40px;
+  max-width: 1000px;
   margin: auto;
-  animation: fadeIn 1.2s ease-in-out;
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-#hero {
-  background: #111;
-  text-align: center;
-  padding: 100px 20px;
-  animation: zoomIn 1.5s ease;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-input, textarea {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  width: 100%;
-}
-
-button {
-  padding: 10px;
-  background: #f1c40f;
-  border: none;
-  border-radius: 5px;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
+h2 {
+  color: #000;
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
 footer {
-  background: #1a1a1a;
+  background-color: #000;
+  color: #aaa;
   text-align: center;
   padding: 20px;
-  font-size: 14px;
 }
-
-/* Animations */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeInDown {
-  from {opacity: 0; transform: translateY(-30px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes zoomIn {
-  from {transform: scale(0.95); opacity: 0;}
-  to {transform: scale(1); opacity: 1;}
-}
-
