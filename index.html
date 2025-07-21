@@ -1,173 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VJ Solutions - Empowering Global Talent</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0a0a0a;
-      color: white;
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background-color: #000;
-    }
-    .navbar ul {
-      display: flex;
-      list-style: none;
-    }
-    .navbar li {
-      margin: 0 15px;
-    }
-    .navbar a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .banner {
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(90deg, #0f0f0f, #1a1a1a);
-    }
-    .banner h1 {
-      font-size: 48px;
-      color: gold;
-    }
-    .banner p {
-      font-size: 20px;
-      color: #ccc;
-    }
-    button {
-      padding: 12px 24px;
-      margin: 10px;
-      font-size: 16px;
-      background-color: #009688;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .section-title {
-      font-size: 36px;
-      color: goldenrod;
-      text-align: center;
-      margin-bottom: 30px;
-      animation: fadeIn 1.5s ease;
-    }
-    .about-us {
-      background: #111;
-      padding: 60px 20px;
-    }
-    .about-text {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 18px;
-      color: #eee;
-      line-height: 1.8;
-      animation: slideInUp 1s ease;
-    }
-    .services {
-      background-color: rgba(0, 0, 0, 0.85);
-      padding: 60px 20px;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 20px;
-    }
-    .service-card {
-      background-color: #1b1b1b;
-      border: 2px solid #009688;
-      border-radius: 15px;
-      padding: 25px;
-      color: #fff;
-      text-align: center;
-      transition: transform 0.4s ease;
-    }
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 150, 136, 0.5);
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    @keyframes slideInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VJ Solutions Group</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="banner" id="home">
-    <div class="navbar">
-      <img src="logo.png" alt="VJ Solutions Logo" class="logo">
-      <ul>
-        <li><a href="#home">Home</a></li>
+  <section class="banner">
+    <nav class="navbar">
+      <img src="logo.png" class="logo" alt="VJ Solutions Logo" />
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </div>
+    </nav>
+
     <div class="content">
       <h1>Empowering Global Talent</h1>
       <p>Your trusted partner in manpower, staffing & HR solutions.</p>
-      <div>
-        <button>Learn More</button>
-        <button>Contact Us</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ABOUT US SECTION -->
-  <section class="about-us" id="about">
-    <div class="container">
-      <h2 class="section-title">About Us</h2>
-      <p class="about-text">
-        At <strong>VJ Solutions</strong>, we are a globally trusted manpower and workforce consulting company delivering MNC-level talent and staffing services. With a passion for excellence and innovation, we provide top-notch outsourcing, recruitment, and workforce optimization solutions tailored to your business needs.
-      </p>
+      <button><span></span>Learn More</button>
+      <button><span></span>Contact Us</button>
     </div>
   </section>
 
-  <!-- SERVICES SECTION -->
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+      VJ Solutions is a leading manpower and HR consulting company delivering
+      excellence across industries. With global outreach and tailored
+      solutions, we bridge the talent gap for MNCs and growing enterprises
+      alike.
+    </p>
+  </section>
+
   <section class="services" id="services">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Recruitment Solutions</h3>
-          <p>Expert hiring for IT, BPO, Manufacturing, and other global industries.</p>
-        </div>
-        <div class="service-card">
-          <h3>HR Consulting</h3>
-          <p>End-to-end HR solutions for scalable business growth and retention.</p>
-        </div>
-        <div class="service-card">
-          <h3>Payroll & Compliance</h3>
-          <p>Seamless payroll processing with full legal & tax compliance.</p>
-        </div>
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <h3>Staffing Solutions</h3>
+        <p>Connecting the right people to the right jobs.</p>
+      </div>
+      <div class="card">
+        <h3>HR Consulting</h3>
+        <p>Building better HR frameworks for your business.</p>
+      </div>
+      <div class="card">
+        <h3>Payroll Management</h3>
+        <p>Reliable, secure, and compliant payroll processing.</p>
+      </div>
+      <div class="card">
+        <h3>Training & Development</h3>
+        <p>Upskill your teams with expert-led programs.</p>
       </div>
     </div>
   </section>
 
-  <!-- Smooth Scroll Script -->
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
