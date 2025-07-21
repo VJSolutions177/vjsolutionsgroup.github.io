@@ -3,80 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VJ Solutions</title>
+  <title>VJ Solutions — Empowering Global Talent</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Loader -->
-  <div id="loader">
-    <div class="loader-inner"></div>
+  <!-- Loading Screen -->
+  <div id="loader-wrapper">
+    <div class="loader"></div>
   </div>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <img src="logo.png" alt="VJ Solutions Logo" class="logo" />
-    <div class="toggle-btn"><i class="fas fa-bars"></i></div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button id="dark-mode-toggle" title="Toggle Dark Mode">🌙</button>
-  </nav>
+  <!-- Header / Navbar -->
+  <header class="navbar sticky">
+    <div class="logo">VJ SOLUTIONS</div>
+    <nav id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <h1>Empowering Global Talent</h1>
-    <p>Your trusted partner in manpower, staffing & HR solutions.</p>
-    <button class="btn">Learn More</button>
-    <button class="btn">Contact Us</button>
-  </section>
-
-  <!-- About Us -->
-  <section class="about" id="about" data-aos="fade-up">
-    <h2>About Us</h2>
-    <p>VJ Solutions is a leading manpower and HR consulting company delivering excellence across industries. With global outreach and tailored solutions, we bridge the talent gap for MNCs and growing enterprises alike.</p>
-  </section>
-
-  <!-- Services -->
-  <section class="services" id="services">
-    <h2 data-aos="fade-up">Our Services</h2>
-    <div class="service-cards">
-      <div class="card" data-aos="fade-up"><i class="fas fa-users"></i><h3>Staffing Solutions</h3><p>Find the right talent with our strategic staffing support.</p></div>
-      <div class="card" data-aos="fade-up"><i class="fas fa-briefcase"></i><h3>HR Consulting</h3><p>Empowering HR departments with expert advice and execution.</p></div>
-      <div class="card" data-aos="fade-up"><i class="fas fa-money-check-alt"></i><h3>Payroll Management</h3><p>Reliable and compliant payroll processing solutions.</p></div>
-      <div class="card" data-aos="fade-up"><i class="fas fa-chalkboard-teacher"></i><h3>Training & Development</h3><p>Upskill your workforce for tomorrow's challenges.</p></div>
+  <!-- Hero Banner -->
+  <section id="home" class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Empowering Global Talent</h1>
+      <p>Your trusted partner in manpower, staffing & HR solutions.</p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn">Learn More</a>
+        <a href="#contact" class="btn btn-secondary">Contact Us</a>
+      </div>
     </div>
   </section>
 
-  <!-- Newsletter -->
-  <section class="newsletter" id="contact" data-aos="fade-up">
-    <h2>Subscribe to Our Newsletter</h2>
-    <form id="newsletter-form">
-      <input type="email" placeholder="Enter your email" required />
-      <button type="submit">Subscribe</button>
-    </form>
+  <!-- About Section -->
+  <section id="about" class="about section">
+    <div class="container" data-aos="fade-left">
+      <h2>About Us</h2>
+      <p>VJ Solutions is a leading manpower and HR consulting company delivering excellence across industries. With global outreach and tailored solutions, we bridge the talent gap for MNCs and growing enterprises alike.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services section">
+    <div class="container">
+      <h2 data-aos="fade-up">Our Services</h2>
+      <div class="card-grid">
+        <div class="card" data-aos="slide-up">
+          <i class="fas fa-briefcase"></i>
+          <h3>Staffing Solutions</h3>
+          <p>Flexible hiring for your growing workforce needs.</p>
+        </div>
+        <div class="card" data-aos="slide-up">
+          <i class="fas fa-user-tie"></i>
+          <h3>HR Consulting</h3>
+          <p>Strategic HR support tailored to your organization.</p>
+        </div>
+        <div class="card" data-aos="slide-up">
+          <i class="fas fa-money-check-alt"></i>
+          <h3>Payroll Management</h3>
+          <p>Accurate, timely, and hassle-free payroll services.</p>
+        </div>
+        <div class="card" data-aos="slide-up">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <h3>Training & Development</h3>
+          <p>Upskilling your team to stay ahead in the market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Newsletter -->
+  <section id="contact" class="contact section">
+    <div class="container" data-aos="fade-up">
+      <h2>Stay Connected</h2>
+      <p>Subscribe to get updates & industry news.</p>
+      <form id="newsletter-form">
+        <input type="email" placeholder="Your email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 VJ Solutions. All rights reserved.</p>
-    <div>
+  <footer class="footer">
+    <div class="social-icons">
       <a href="#"><i class="fab fa-facebook"></i></a>
       <a href="#"><i class="fab fa-linkedin"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
     </div>
+    <p>&copy; 2025 VJ Solutions. All rights reserved.</p>
   </footer>
 
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/917729950118" class="chat-widget" target="_blank">
+  <!-- WhatsApp Chat Button -->
+  <a href="https://wa.me/917729950118" class="chat-btn" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Dark Mode Toggle -->
+  <div class="dark-toggle" onclick="toggleDarkMode()">
+    <i class="fas fa-moon"></i>
+  </div>
+
   <script src="script.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
