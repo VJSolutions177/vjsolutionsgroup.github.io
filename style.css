@@ -117,14 +117,14 @@ a {
   background-color: #111;
   border: 1px solid #FFD700;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 3rem;
   text-align: center;
   flex: 1 1 30%;
 }
 
 .service-card img {
   width: 120px;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
 }
 
 .service-card h3 {
