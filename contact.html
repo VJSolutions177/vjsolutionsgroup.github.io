@@ -1,1 +1,81 @@
-...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | VJ Solutions</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">VJ Solutions</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="booking.html">Book</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+    </nav>
+  </header>
+
+  <!-- Contact Forms Section -->
+  <section class="contact">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Get in touch with our team. Choose the relevant form below:</p>
+
+      <div class="form-section">
+
+        <!-- General Inquiry -->
+        <div class="contact-box">
+          <h2>📨 General Inquiry</h2>
+          <form>
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Job Seeker -->
+        <div class="contact-box">
+          <h2>👨‍💼 For Job Seekers</h2>
+          <form>
+            <input type="text" placeholder="Full Name" required />
+            <input type="email" placeholder="Email" required />
+            <input type="text" placeholder="Preferred Role / Skills" required />
+            <textarea placeholder="Brief about yourself" rows="4" required></textarea>
+            <button type="submit">Apply Now</button>
+          </form>
+        </div>
+
+        <!-- Corporate Clients -->
+        <div class="contact-box">
+          <h2>🏢 For Clients</h2>
+          <form>
+            <input type="text" placeholder="Company Name" required />
+            <input type="email" placeholder="Contact Email" required />
+            <input type="text" placeholder="Service Required (e.g., Placement)" required />
+            <textarea placeholder="Your Requirements" rows="4" required></textarea>
+            <button type="submit">Submit Request</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 VJ Solutions. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
