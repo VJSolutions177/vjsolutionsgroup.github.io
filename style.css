@@ -53,7 +53,7 @@ a {
 
 /* Hero Section */
 .hero {
-  background: url('hero.jpg') no-repeat center center/cover;
+  background: url('hero.png') no-repeat center center/cover;
   height: 90vh;
   display: flex;
   align-items: center;
