@@ -1,11 +1,7 @@
-// Mobile Navbar Toggle
+// Navbar toggle for mobile
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
-// JavaScript placeholder – no major JS needed yet
-console.log("VJ Solutions site loaded.");
-// Future interactive features can go here
-console.log("VJ Solutions website loaded.");
