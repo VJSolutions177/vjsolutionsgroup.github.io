@@ -107,3 +107,57 @@ footer {
   padding: 20px;
   color: #aaa;
 }
+.about {
+  padding: 60px 20px;
+  background: #1a1a1a;
+}
+.about h1 {
+  color: gold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.about p {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.about-box {
+  background: #222;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 700px;
+  border-left: 5px solid gold;
+}
+
+/* Team Section */
+.team {
+  padding: 60px 20px;
+  background: #0f0f0f;
+  text-align: center;
+}
+.team h2 {
+  color: gold;
+  margin-bottom: 30px;
+}
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.team-member {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 200px;
+}
+.team-member img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+.team-member h3 {
+  margin: 10px 0 5px;
+  color: gold;
+}
