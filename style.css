@@ -82,6 +82,23 @@ body {
   color: gold;
   margin-bottom: 15px;
 }
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    display: none;
+    background: #111;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 10px;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
 
 /* Footer */
 footer {
