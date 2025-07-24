@@ -20,9 +20,13 @@ a {
 .navbar {
   background-color: #111;
   padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.navbar .logo {
+.logo {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -35,12 +39,6 @@ a {
   height: 30px;
 }
 
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .nav-links {
   list-style: none;
   display: flex;
@@ -51,9 +49,15 @@ a {
   color: #FFD700;
 }
 
-/* Hero Section */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: #FFD700;
+}
+
+/* Hero */
 .hero {
-  background: url('hero.png') no-repeat center center/cover;
+  background: url('../images/hero.png') no-repeat center center/cover;
   height: 90vh;
   display: flex;
   align-items: center;
@@ -70,7 +74,6 @@ a {
 .hero h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #fff;
 }
 
 .hero p {
@@ -86,37 +89,7 @@ a {
   font-weight: 600;
 }
 
-/* Services Section */
-.services {
-  padding: 4rem 0;
-  background-color: #0d0d0d;
-}
-
-.service-boxes {
-  display: flex;
-  justify-content: space-between;
-  gap: 1.5rem;
-}
-
-.service-card {
-  background-color: #111;
-  border: 1px solid #FFD700;
-  border-radius: 10px;
-  padding: 2rem;
-  text-align: center;
-  flex: 1;
-}
-
-.service-card h3 {
-  color: #FFD700;
-  margin-top: 1rem;
-}
-
-.service-card .icon {
-  font-size: 2rem;
-}
-
-/* Welcome Section */
+/* Welcome */
 .welcome {
   text-align: center;
   padding: 3rem 0;
@@ -126,6 +99,36 @@ a {
   color: #FFD700;
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+/* Services */
+.services {
+  padding: 4rem 0;
+}
+
+.service-boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background-color: #111;
+  border: 1px solid #FFD700;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  flex: 1 1 30%;
+}
+
+.service-card img {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  color: #FFD700;
 }
 
 /* Footer */
@@ -145,4 +148,26 @@ footer {
 .social-icons a img {
   width: 20px;
   margin: 0 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .service-boxes {
+    flex-direction: column;
+  }
 }
