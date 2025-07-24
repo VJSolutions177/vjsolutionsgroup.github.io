@@ -321,3 +321,44 @@ footer {
 .contact-box form button:hover {
   opacity: 0.9;
 }
+/* Booking Section */
+.booking {
+  background: #1a1a1a;
+  padding: 60px 20px;
+  text-align: center;
+}
+.booking h1 {
+  color: gold;
+  margin-bottom: 10px;
+}
+.booking p {
+  margin-bottom: 30px;
+  color: #ccc;
+}
+.booking-form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.booking-form input,
+.booking-form select {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: #fff;
+}
+.booking-form button {
+  background: gold;
+  color: #000;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.booking-form button:hover {
+  opacity: 0.9;
+}
