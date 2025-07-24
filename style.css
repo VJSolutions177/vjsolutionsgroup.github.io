@@ -161,3 +161,46 @@ footer {
   margin: 10px 0 5px;
   color: gold;
 }
+/* Services Section */
+.services {
+  padding: 60px 20px;
+  background: #1a1a1a;
+  text-align: center;
+}
+.services h1 {
+  color: gold;
+  margin-bottom: 40px;
+}
+.service-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.service-box {
+  background: #222;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  border-top: 5px solid gold;
+  transition: transform 0.3s;
+}
+.service-box:hover {
+  transform: translateY(-5px);
+}
+.service-box h2 {
+  color: gold;
+  margin-bottom: 15px;
+}
+.service-box p {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+.btn-sm {
+  padding: 8px 18px;
+  background: gold;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
