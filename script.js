@@ -7,3 +7,5 @@ menuToggle.addEventListener('click', () => {
 });
 // JavaScript placeholder – no major JS needed yet
 console.log("VJ Solutions site loaded.");
+// Future interactive features can go here
+console.log("VJ Solutions website loaded.");
