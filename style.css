@@ -161,3 +161,14 @@ footer {
   color: #777;
   font-size: 14px;
 }
+.video-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #000;
+  color: gold;
+}
+
+.video-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
