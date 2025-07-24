@@ -1,1 +1,57 @@
-...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Service | VJ Solutions</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">VJ Solutions</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="booking.html" class="active">Book</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+    </nav>
+  </header>
+
+  <!-- Booking Form Section -->
+  <section class="booking">
+    <div class="container">
+      <h1>Book a Service</h1>
+      <p>Please fill out the form below to schedule a consultation or service with our team.</p>
+
+      <form class="booking-form">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <input type="tel" placeholder="Phone Number" required />
+        <input type="date" placeholder="Preferred Date" required />
+        <input type="time" placeholder="Preferred Time" required />
+        <select required>
+          <option value="">Select Service</option>
+          <option value="Consultancy">Consultancy</option>
+          <option value="Training">Training</option>
+          <option value="Placement">Placement</option>
+        </select>
+        <button type="submit">Submit Booking</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 VJ Solutions. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
