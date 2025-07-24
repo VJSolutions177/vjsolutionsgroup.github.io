@@ -3,47 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VJ Solutions | Home</title>
+  <title>VJ Solutions</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">VJ Solutions</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="booking.html">Book</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="menu-toggle">&#9776;</div>
-    </nav>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="logo.png" alt="VJ Solutions" />
+        <span>VJ SOLUTIONS</span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Book</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Empowering Workforce with Smart Solutions</h1>
-      <p>Consultancy | Training | Placement</p>
-      <a href="services.html" class="btn">Explore Services</a>
+    <div class="overlay">
+      <div class="hero-content">
+        <h1>Empowering Workforce with Smart Solutions</h1>
+        <p>Consultancy | Training | Placement</p>
+        <a href="#" class="btn">Explore Services</a>
+      </div>
     </div>
   </section>
 
-  <!-- Overview -->
-  <section class="overview">
-    <h2>Welcome to VJ Solutions</h2>
-    <p>We are a professional manpower consultancy providing top-notch talent solutions tailored for enterprises.</p>
+  <section class="services">
+    <div class="container services-grid">
+      <div class="service-card">
+        <i class="icon">💡</i>
+        <h3>Consultancy</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      </div>
+      <div class="service-card">
+        <i class="icon">🧑‍🏫</i>
+        <h3>Training</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      </div>
+      <div class="service-card">
+        <i class="icon">💼</i>
+        <h3>Placement</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 VJ Solutions. All rights reserved.</p>
-  </footer>
+  <section class="welcome">
+    <div class="container">
+      <h2>Welcome to VJ Solutions</h2>
+      <p>
+        We are a professional manpower-consultancy providing top notch talent
+        solutions tailored for enterprises.
+      </p>
+    </div>
+  </section>
 
-  <script src="js/script.js"></script>
+  <footer>
+    <div class="container">
+      <p>© 2025 VJ Solutions: All-rights reserved.</p>
+      <div class="socials">
+        <a href="#">🐦</a>
+        <a href="#">📘</a>
+        <a href="#">📱</a>
+        <a href="#">🔗</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
