@@ -144,10 +144,16 @@ footer {
   gap: 1rem;
   align-items: center;
 }
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 .social-icons a {
   color: #FFD700;
   font-size: 20px;
-  margin: 0 10px;
   transition: 0.3s;
 }
 
