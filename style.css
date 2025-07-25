@@ -1,3 +1,19 @@
+<style>
+  .floating-gif {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    width: 150px;
+    height: auto;
+  }
+
+  .floating-gif img {
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+  }
+</style>
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
