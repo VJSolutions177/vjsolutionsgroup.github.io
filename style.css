@@ -101,6 +101,44 @@ a {
 .hero .btn:hover {
   background: #ff3399;
 }
+.hero {
+  height: 90vh;
+  background: linear-gradient(120deg, #3a0ca3, #7209b7, #f72585);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 40px;
+  gap: 50px;
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+.hero-gif img {
+  width: 280px;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-gif img {
+    width: 200px;
+    margin-top: 20px;
+  }
+}
 
 /* ---------------- ABOUT ---------------- */
 .about {
