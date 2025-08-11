@@ -176,3 +176,615 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient Civilizations Timeline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #2c1810 0%, #8b4513 50%, #daa520 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #2c1810;
+        }
+
+        .timeline-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #8b4513;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #daa520, #8b4513, #2c1810);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 60px 0;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .timeline-item:nth-child(odd) {
+            animation-delay: 0.2s;
+        }
+
+        .timeline-item:nth-child(even) {
+            animation-delay: 0.4s;
+        }
+
+        .timeline-item.left {
+            text-align: right;
+            padding-right: calc(50% + 40px);
+        }
+
+        .timeline-item.right {
+            text-align: left;
+            padding-left: calc(50% + 40px);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .timeline-dot.egyptian {
+            background: #daa520;
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 4px #daa520;
+        }
+
+        .timeline-dot.greek {
+            background: #4169e1;
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 4px #4169e1;
+        }
+
+        .timeline-dot.roman {
+            background: #dc143c;
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 4px #dc143c;
+        }
+
+        .timeline-dot:hover {
+            transform: translateX(-50%) scale(1.3);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 5px solid;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-card.egyptian {
+            border-left-color: #daa520;
+        }
+
+        .timeline-card.greek {
+            border-left-color: #4169e1;
+        }
+
+        .timeline-card.roman {
+            border-left-color: #dc143c;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .civilization-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .egyptian .civilization-icon {
+            background: #daa520;
+        }
+
+        .greek .civilization-icon {
+            background: #4169e1;
+        }
+
+        .roman .civilization-icon {
+            background: #dc143c;
+        }
+
+        .card-date {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #8b4513;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #2c1810;
+        }
+
+        .card-preview {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .card-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            margin-top: 15px;
+        }
+
+        .card-details.expanded {
+            max-height: 500px;
+        }
+
+        .card-details p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .card-details ul {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        .card-details li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .expand-btn {
+            background: none;
+            border: none;
+            color: #8b4513;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .expand-btn:hover {
+            color: #2c1810;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legend-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.egyptian {
+            background: #daa520;
+        }
+
+        .legend-dot.greek {
+            background: #4169e1;
+        }
+
+        .legend-dot.roman {
+            background: #dc143c;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item.left,
+            .timeline-item.right {
+                text-align: left;
+                padding-left: 60px;
+                padding-right: 20px;
+            }
+
+            .timeline-line {
+                left: 30px;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .timeline-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline-container">
+        <div class="header">
+            <h1>🏛️ Ancient Civilizations Timeline</h1>
+            <p>Journey through 3,500 years of human history (3000 BCE - 500 CE)</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item left">
+                <div class="timeline-dot egyptian"></div>
+                <div class="timeline-card egyptian" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="civilization-icon">🏺</div>
+                        <div class="card-date">3100 BCE</div>
+                    </div>
+                    <div class="card-title">Unification of Egypt</div>
+                    <div class="card-preview">King Menes unites Upper and Lower Egypt, founding the first dynasty.</div>
+                    <div class="card-details">
+                        <p>The legendary King Menes (possibly Narmer) successfully unified the two kingdoms of Egypt, creating one of the world's first great civilizations. This marked the beginning of the Early Dynastic Period.</p>
+                        <ul>
+                            <li>Established Memphis as the capital city</li>
+                            <li>Created the double crown symbolizing unified rule</li>
+                            <li>Began the tradition of pharaonic divine kingship</li>
+                            <li>Started the development of hieroglyphic writing</li>
+                        </ul>
+                    </div>
+                    <button class="expand-btn">Click to learn more ▼</button>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-dot egyptian"></div>
+                <div class="timeline-card egyptian" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="civilization-icon">🔺</div>
+                        <div class="card-date">2580 BCE</div>
+                    </div>
+                    <div class="card-title">Great Pyramid of Giza Built</div>
+                    <div class="card-preview">Pharaoh Khufu constructs the last remaining Wonder of the Ancient World.</div>
+                    <div class="card-details">
+                        <p>The Great Pyramid, built for Pharaoh Khufu, stood as the tallest human-made structure for over 3,800 years. This architectural marvel demonstrates the incredible engineering skills of ancient Egyptians.</p>
+                        <ul>
+                            <li>Originally 146.5 meters (481 feet) tall</li>
+                            <li>Built with approximately 2.3 million stone blocks</li>
+                            <li>Took an estimated 20 years to complete</li>
+                            <li>Aligned precisely with cardinal directions</li>
+                        </ul>
+                    </div>
+                    <button class="expand-btn">Click to learn more ▼</button>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-dot greek"></div>
+                <div class="timeline-card greek" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="civilization-icon">🏛️</div>
+                        <div class="card-date">508 BCE</div>
+                    </div>
+                    <div class="card-title">Birth of Athenian Democracy</div>
+                    <div class="card-preview">Cleisthenes introduces democratic reforms in Athens, creating the world's first democracy.</div>
+                    <div class="card-details">
+                        <p>Cleisthenes revolutionized Athenian government by introducing democratic principles that would influence political systems for millennia. Citizens could now participate directly in governance.</p>
+                        <ul>
+                            <li>Established the concept of "one citizen, one vote"</li>
+                            <li>Created the system of ostracism to prevent tyranny</li>
+                            <li>Organized citizens into demes (local districts)</li>
+                            <li>Founded the Council of 500 to propose legislation</li>
+                        </ul>
+                    </div>
+                    <button class="expand-btn">Click to learn more ▼</button>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-dot greek"></div>
+                <div class="timeline-card greek" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="civilization-icon">⚔️</div>
+                        <div class="card-date">490 BCE</div>
+                    </div>
+                    <div class="card-title">Battle of Marathon</div>
+                    <div class="card-preview">Athenians defeat the Persian invasion, inspiring the modern marathon race.</div>
+                    <div class="card-details">
+                        <p>The Battle of Marathon was a pivotal moment in the Greco-Persian Wars. The Athenian victory proved that the mighty Persian Empire could be defeated and preserved Greek independence.</p>
+                        <ul>
+                            <li>Athenians were outnumbered roughly 2 to 1</li>
+                            <li>Pheidippides ran 26 miles to announce the victory</li>
+                            <li>Established Athens as a major military power</li>
+                            <li>Led to the Golden Age of Athens</li>
+                        </ul>
+                    </div>
+                    <button class="expand-btn">Click to learn more ▼</button>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-dot greek"></div>
+                <div class="timeline-card greek" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="civilization-icon">🎭</div>
+                        <div class="card-date">447 BCE</div>
+                    </div>
+                    <div class="card-title">Parthenon Construction Begins</div>
+                    <div class="card-preview">Athens builds its most famous temple during the Golden Age under Pericles.</div>
+                    <div class="card-details">
+                        <p>The Parthenon represents the pinnacle of classical Greek architecture and the height of Athenian power. Built to honor Athena, it showcased the city's wealth and artistic achievement.</p>
+                        <ul>
+                            <li>Designed by architects Ictinus and Callicrates</li>
+                            <li>Featured the golden ratio in its proportions</li>
+                            <li>Housed a massive gold and ivory statue of Athena</li>
+                            <li>Symbolized Athenian democracy and culture</li>
+                        </ul>
+                    </div>
+                    <button class="expand-btn">Click to learn more ▼</button>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-dot roman"></div>
+                <div class="timeline-card roman" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="civilization-icon">🦅</div>
+                        <div class="card-date">49 BCE</div>
+                    </div>
+                    <div class="card-title">Caesar Crosses the Rubicon</div>
+                    <div class="card-preview">Julius Caesar's fateful decision leads to civil war and the end of the Roman Republic.</div>
+                    <div class="card-details">
+                        <p>When Caesar crossed the Rubicon River with his army, he defied the Roman Senate and triggered a civil war that would transform Rome from a republic into an empire.</p>
+                        <ul>
+                            <li>Uttered the famous phrase "Alea iacta est" (The die is cast)</li>
+                            <li>Violated Roman law by bringing an army into Italy</li>
+                            <li>Led to Caesar's eventual dictatorship</li>
+                            <li>Marked the beginning of the end for the Roman Republic</li>
+                        </ul>
+                    </div>
+                    <button class="expand-btn">Click to learn more ▼</button>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-dot roman"></div>
+                <div class="timeline-card roman" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="civilization-icon">👑</div>
+                        <div class="card-date">27 BCE</div>
+                    </div>
+                    <div class="card-title">Augustus Becomes First Emperor</div>
+                    <div class="card-preview">Octavian becomes Augustus, founding the Roman Empire and beginning the Pax Romana.</div>
+                    <div class="card-details">
+                        <p>Augustus (formerly Octavian) became Rome's first emperor, establishing a new form of government that would last for centuries. His reign began the Pax Romana, a period of unprecedented peace and prosperity.</p>
+                        <ul>
+                            <li>Ruled for 45 years until his death in 14 CE</li>
+                            <li>Established the Praetorian Guard</li>
+                            <li>Expanded the empire's borders significantly</li>
+                            <li>Initiated major building projects across Rome</li>
+                        </ul>
+                    </div>
+                    <button class="expand-btn">Click to learn more ▼</button>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-dot roman"></div>
+                <div class="timeline-card roman" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="civilization-icon">🏟️</div>
+                        <div class="card-date">80 CE</div>
+                    </div>
+                    <div class="card-title">Colosseum Opens</div>
+                    <div class="card-preview">Emperor Titus inaugurates Rome's greatest amphitheater with 100 days of games.</div>
+                    <div class="card-details">
+                        <p>The Flavian Amphitheater, known as the Colosseum, became the symbol of Roman engineering prowess and imperial power. It could hold up to 80,000 spectators for gladiatorial contests and public spectacles.</p>
+                        <ul>
+                            <li>Took 8 years to build under three emperors</li>
+                            <li>Featured advanced engineering like elevators and drainage</li>
+                            <li>Hosted gladiator fights, animal hunts, and naval battles</li>
+                            <li>Remained in use for over 400 years</li>
+                        </ul>
+                    </div>
+                    <button class="expand-btn">Click to learn more ▼</button>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-dot roman"></div>
+                <div class="timeline-card roman" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="civilization-icon">✝️</div>
+                        <div class="card-date">313 CE</div>
+                    </div>
+                    <div class="card-title">Edict of Milan</div>
+                    <div class="card-preview">Constantine legalizes Christianity, transforming the Roman Empire forever.</div>
+                    <div class="card-details">
+                        <p>Emperor Constantine's Edict of Milan granted religious tolerance throughout the empire and ended the persecution of Christians. This decision would reshape both the Roman Empire and world history.</p>
+                        <ul>
+                            <li>Ended centuries of Christian persecution</li>
+                            <li>Allowed Christians to practice openly</li>
+                            <li>Led to Christianity becoming the empire's official religion</li>
+                            <li>Influenced the development of Christian theology</li>
+                        </ul>
+                    </div>
+                    <button class="expand-btn">Click to learn more ▼</button>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-dot roman"></div>
+                <div class="timeline-card roman" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="civilization-icon">🏛️</div>
+                        <div class="card-date">476 CE</div>
+                    </div>
+                    <div class="card-title">Fall of Western Roman Empire</div>
+                    <div class="card-preview">The last Western Roman Emperor is deposed, ending over 1000 years of Roman rule.</div>
+                    <div class="card-details">
+                        <p>Romulus Augustulus, the last Western Roman Emperor, was deposed by the Germanic chieftain Odoacer. This event traditionally marks the end of the Western Roman Empire and the beginning of the Middle Ages in Europe.</p>
+                        <ul>
+                            <li>Ended over 1000 years of Roman dominance</li>
+                            <li>Led to the rise of Germanic kingdoms</li>
+                            <li>Eastern Roman Empire (Byzantine) continued for another 1000 years</li>
+                            <li>Marked the transition to the Medieval period</li>
+                        </ul>
+                    </div>
+                    <button class="expand-btn">Click to learn more ▼</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-dot egyptian"></div>
+                <span>Egyptian Civilization</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot greek"></div>
+                <span>Greek Civilization</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot roman"></div>
+                <span>Roman Civilization</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleCard(card) {
+            const details = card.querySelector('.card-details');
+            const btn = card.querySelector('.expand-btn');
+            
+            if (details.classList.contains('expanded')) {
+                details.classList.remove('expanded');
+                btn.textContent = 'Click to learn more ▼';
+            } else {
+                // Close all other expanded cards
+                document.querySelectorAll('.card-details.expanded').forEach(detail => {
+                    detail.classList.remove('expanded');
+                    detail.parentElement.querySelector('.expand-btn').textContent = 'Click to learn more ▼';
+                });
+                
+                details.classList.add('expanded');
+                btn.textContent = 'Click to collapse ▲';
+                
+                // Smooth scroll to the card
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Add click handlers to timeline dots
+        document.querySelectorAll('.timeline-dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                const card = this.parentElement.querySelector('.timeline-card');
+                toggleCard(card);
+            });
+        });
+
+        // Add entrance animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96d4f8ee42476ebc',t:'MTc1NDg4NjM2MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
