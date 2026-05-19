@@ -8,14 +8,15 @@
 </head>
 
 <body>
+
 <div id="loader">
-  <img src="assets/vj-logo.png" />
+  <img src="assets/vj-logo.png" alt="VJ Solutions">
   <h2>VJ SOLUTIONS</h2>
 </div>
 
 <header class="navbar">
   <a href="#home" class="logo">
-    <img src="assets/vj-logo.png" />
+    <img src="assets/vj-logo.png" alt="VJ Solutions Logo">
     <div>
       <h2>VJ SOLUTIONS</h2>
       <p>Talent With Vision</p>
@@ -30,27 +31,45 @@
     <a href="#services">Services</a>
     <a href="#careers">Careers</a>
     <a href="#apply">Apply</a>
-    <a href="#admin">Admin</a>
     <a href="#contact">Contact</a>
-    <button onclick="toggleTheme()" class="theme-btn">🌙 / ☀️</button>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 / ☀️</button>
   </nav>
 </header>
 
 <section class="hero" id="home">
-  <div class="particles"></div>
-  <video autoplay muted loop playsinline>
-    <source src="https://cdn.coverr.co/videos/coverr-business-meeting-1569/1080p.mp4" type="video/mp4">
-  </video>
+  <div class="gold-particles"></div>
 
-  <div class="hero-content">
+  <div class="hero-left">
     <span class="badge">Premium Recruitment & Corporate Hiring Partner</span>
     <h1>Connecting <span id="typing"></span></h1>
     <p>
-      VJ Solutions helps companies and candidates connect through verified IT,
-      Non-IT, Pharma, Technical, Non-Technical and corporate hiring opportunities.
+      VJ Solutions connects companies with verified talent across IT, Non-IT,
+      Pharma, Healthcare, Technical and Non-Technical domains.
     </p>
     <a href="#apply" class="btn gold">Apply Now</a>
-    <a href="#tieup" class="btn outline">Company Tie-Up</a>
+    <a href="#services" class="btn outline">Know More</a>
+  </div>
+
+  <div class="hero-graphic">
+    <div class="orbit">
+      <span></span><span></span><span></span>
+      <img src="assets/vj-logo.png" alt="VJ Solutions">
+    </div>
+  </div>
+</section>
+
+<section class="wipro-style reveal">
+  <div class="feature-text">
+    <h2>AI-Powered Hiring Support</h2>
+    <p>
+      Helping candidates and companies move faster with structured screening,
+      interview coordination and verified job updates.
+    </p>
+    <a href="#contact" class="know-btn">Know More →</a>
+  </div>
+
+  <div class="feature-img">
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Business Meeting">
   </div>
 </section>
 
@@ -63,59 +82,65 @@
 
 <section class="section reveal" id="about">
   <h2>About VJ Solutions</h2>
+
   <div class="two-col">
-    <img src="https://source.unsplash.com/900x700/?corporate-office,business" />
+    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Corporate Office">
+
     <div>
       <h3>Founder: G Vijay Netha</h3>
       <p>
-        VJ Solutions is a Hyderabad-based recruitment and career support company
-        focused on professional hiring, HR screening, interview coordination,
-        documentation support and onboarding guidance.
+        VJ Solutions is a Hyderabad-based recruitment and career support company.
+        We support candidates with job updates, HR screening, interview preparation,
+        documentation assistance and onboarding coordination.
       </p>
       <p>
-        We support freshers and experienced candidates across IT, Non-IT,
-        Pharma, Healthcare, BPO, Operations, Voice and Non-Voice domains.
+        Our goal is to build strong company tie-ups and help candidates reach
+        verified opportunities faster.
       </p>
     </div>
   </div>
 </section>
 
 <section class="section dark reveal" id="services">
-  <h2>Our Premium Services</h2>
+  <h2>Our Services</h2>
+
   <div class="cards">
-    <div class="card"><h3>IT Technical Hiring</h3><p>Cloud, Azure, cybersecurity, software, support and testing roles.</p></div>
-    <div class="card"><h3>Non-Technical Hiring</h3><p>Voice, non-voice, BPO, operations and customer support roles.</p></div>
-    <div class="card"><h3>Pharma Hiring</h3><p>Healthcare, pharma, medical support and corporate healthcare roles.</p></div>
-    <div class="card"><h3>Resume & HR Support</h3><p>Resume guidance, interview preparation and HR coordination.</p></div>
+    <div class="card"><h3>IT Technical Hiring</h3><p>Cloud, Azure, software support, cybersecurity, testing and technical roles.</p></div>
+    <div class="card"><h3>Non-Technical Hiring</h3><p>Voice, non-voice, BPO, customer support and operations roles.</p></div>
+    <div class="card"><h3>Pharma Hiring</h3><p>Pharma, healthcare, medical process and support roles.</p></div>
+    <div class="card"><h3>Company Tie-Ups</h3><p>Bulk hiring, fresher hiring, experienced hiring and HR coordination.</p></div>
   </div>
 </section>
 
 <section class="section reveal">
-  <h2>Corporate Image Gallery</h2>
+  <h2>Corporate Gallery</h2>
+
   <div class="gallery">
-    <img src="https://source.unsplash.com/800x600/?business-meeting" />
-    <img src="https://source.unsplash.com/800x600/?multinational-company" />
-    <img src="https://source.unsplash.com/800x600/?technology-office" />
-    <img src="https://source.unsplash.com/800x600/?recruitment-team" />
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Recruitment Team">
+    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80" alt="Corporate Office">
+    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Technology Office">
+    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80" alt="Business Meeting">
   </div>
 </section>
 
 <section class="section dark reveal" id="careers">
-  <h2>Careers Page</h2>
+  <h2>Careers</h2>
+
   <div class="cards">
-    <div class="card"><h3>IT Openings</h3><p>Technical support, cloud, software, cybersecurity and testing.</p></div>
-    <div class="card"><h3>Non-IT Openings</h3><p>Voice, non-voice, operations, customer support and BPO.</p></div>
-    <div class="card"><h3>Pharma Openings</h3><p>Healthcare, medical process and pharma support roles.</p></div>
-    <div class="card"><h3>Freshers Hiring</h3><p>Daily verified fresher and experienced openings.</p></div>
+    <div class="card"><h3>IT Openings</h3><p>Technical support, cloud, cybersecurity, software and testing jobs.</p></div>
+    <div class="card"><h3>Non-IT Openings</h3><p>Voice, non-voice, BPO and operations jobs.</p></div>
+    <div class="card"><h3>Pharma Openings</h3><p>Healthcare and pharma process opportunities.</p></div>
+    <div class="card"><h3>Freshers Hiring</h3><p>Daily verified fresher and experienced candidate openings.</p></div>
   </div>
 </section>
 
 <section class="section reveal" id="apply">
   <h2>Candidate Application Form</h2>
+
   <form class="form" onsubmit="sendWhatsApp(event)">
-    <input id="name" placeholder="Full Name" required />
-    <input id="phone" placeholder="Phone Number" required />
-    <input id="email" placeholder="Email ID" required />
+    <input id="name" placeholder="Full Name" required>
+    <input id="phone" placeholder="Phone Number" required>
+    <input id="email" placeholder="Email ID" required>
     <select id="domain">
       <option>IT Technical</option>
       <option>Non-Technical</option>
@@ -128,38 +153,21 @@
   </form>
 </section>
 
-<section class="section dark reveal" id="admin">
-  <h2>Admin Dashboard Preview</h2>
-  <div class="dashboard">
-    <div><h3>Candidate Registration</h3><p>Manage candidate details.</p></div>
-    <div><h3>Resume Upload System</h3><p>Connect later with Firebase/server.</p></div>
-    <div><h3>Recruiter Login Panel</h3><p>Static UI ready for backend.</p></div>
-    <div><h3>Job Posting System</h3><p>Add real backend later.</p></div>
-  </div>
-</section>
+<section class="section dark reveal">
+  <h2>Company Tie-Up With VJ Solutions</h2>
 
-<section class="section reveal" id="tieup">
-  <h2>Company Tie-Up</h2>
   <div class="glass">
     <p>
-      VJ Solutions is open for company tie-ups, HR partnerships, bulk hiring,
-      fresher hiring, experienced hiring and recruitment support.
+      We are open for partnerships with companies, HR teams, consultancies and
+      hiring managers for bulk hiring, fresher hiring and experienced hiring.
     </p>
     <a href="mailto:vjsolution.info@gmail.com" class="btn gold">Send Tie-Up Mail</a>
   </div>
 </section>
 
-<section class="section dark reveal">
-  <h2>AI Chatbot Section</h2>
-  <div class="chatbot">
-    <p><b>VJ AI Assistant:</b> Hi! Looking for jobs, hiring support, or company tie-up?</p>
-    <input placeholder="Type your question..." />
-    <button class="btn gold">Ask</button>
-  </div>
-</section>
-
 <section class="section reveal" id="contact">
   <h2>Contact VJ Solutions</h2>
+
   <div class="contact">
     <div><h3>Founder</h3><p>G Vijay Netha</p></div>
     <div><h3>Phone</h3><p>+91 7729950118</p></div>
@@ -177,49 +185,125 @@
   </div>
 </section>
 
+<button class="chat-open" onclick="toggleChat()">AI Chat</button>
+
+<div class="chatbox" id="chatbox">
+  <div class="chat-head">
+    <b>VJ AI Assistant</b>
+    <button onclick="toggleChat()">×</button>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <p><b>AI:</b> Hi! I can help with jobs, hiring support, company tie-ups and applications.</p>
+  </div>
+  <div class="chat-input">
+    <input id="chatInput" placeholder="Type your question...">
+    <button onclick="sendChat()">Send</button>
+  </div>
+</div>
+
 <a class="whatsapp" href="https://wa.me/917729950118" target="_blank">WhatsApp</a>
 
 <footer>
-  <img src="assets/vj-logo.png" />
+  <img src="assets/vj-logo.png" alt="VJ Solutions">
   <p>© 2026 VJ Solutions | Talent With Vision | Hyderabad</p>
 </footer>
 
 <script>
-function toggleMenu(){document.getElementById("navMenu").classList.toggle("active")}
-function toggleTheme(){document.body.classList.toggle("light")}
-window.onload=()=>{document.getElementById("loader").style.display="none"}
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("active");
+}
 
-const words=["Talent With Vision","Companies With Talent","Careers With Confidence"];
-let i=0,j=0,del=false;
+function toggleTheme(){
+  document.body.classList.toggle("light");
+}
+
+window.onload = () => {
+  document.getElementById("loader").style.display = "none";
+};
+
+const words = ["Talent With Vision", "Companies With Talent", "Careers With Confidence"];
+let i = 0, j = 0, del = false;
+
 function type(){
-  const t=document.getElementById("typing");
-  let w=words[i];
-  t.innerHTML=w.substring(0,j);
-  if(!del && j++===w.length) del=true;
-  if(del && j--===0){del=false;i=(i+1)%words.length}
-  setTimeout(type,del?70:120)
+  const t = document.getElementById("typing");
+  let word = words[i];
+  t.innerHTML = word.substring(0, j);
+
+  if(!del && j++ === word.length) del = true;
+  if(del && j-- === 0){
+    del = false;
+    i = (i + 1) % words.length;
+  }
+
+  setTimeout(type, del ? 70 : 120);
 }
 type();
 
-window.addEventListener("scroll",()=>{
-  document.querySelectorAll(".reveal").forEach(el=>{
-    if(el.getBoundingClientRect().top < innerHeight-100) el.classList.add("active")
-  })
-})
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".reveal").forEach(el => {
+    if(el.getBoundingClientRect().top < window.innerHeight - 100){
+      el.classList.add("active");
+    }
+  });
+});
 
-document.querySelectorAll("[data-count]").forEach(counter=>{
-  let target=+counter.dataset.count, c=0;
-  let run=setInterval(()=>{
-    c+=Math.ceil(target/80);
-    if(c>=target){c=target;clearInterval(run)}
-    counter.innerText=c+"+";
-  },25)
-})
+document.querySelectorAll("[data-count]").forEach(counter => {
+  let target = +counter.dataset.count;
+  let count = 0;
+  let run = setInterval(() => {
+    count += Math.ceil(target / 80);
+    if(count >= target){
+      count = target;
+      clearInterval(run);
+    }
+    counter.innerText = count + "+";
+  }, 25);
+});
 
 function sendWhatsApp(e){
   e.preventDefault();
-  let text=`New Candidate Application%0AName: ${name.value}%0APhone: ${phone.value}%0AEmail: ${email.value}%0ADomain: ${domain.value}%0AMessage: ${message.value}`;
-  window.open(`https://wa.me/917729950118?text=${text}`,"_blank");
+
+  let text =
+    `New Candidate Application%0A` +
+    `Name: ${document.getElementById("name").value}%0A` +
+    `Phone: ${document.getElementById("phone").value}%0A` +
+    `Email: ${document.getElementById("email").value}%0A` +
+    `Domain: ${document.getElementById("domain").value}%0A` +
+    `Message: ${document.getElementById("message").value}`;
+
+  window.open(`https://wa.me/917729950118?text=${text}`, "_blank");
+}
+
+function toggleChat(){
+  document.getElementById("chatbox").classList.toggle("active");
+}
+
+function sendChat(){
+  let input = document.getElementById("chatInput");
+  let body = document.getElementById("chatBody");
+  let msg = input.value.trim();
+
+  if(!msg) return;
+
+  body.innerHTML += `<p><b>You:</b> ${msg}</p>`;
+
+  let reply = "Please contact VJ Solutions on WhatsApp: +91 7729950118 for faster support.";
+
+  if(msg.toLowerCase().includes("job")){
+    reply = "We share verified IT, Non-IT, Pharma and fresher job updates daily. Join our WhatsApp Channel.";
+  }
+
+  if(msg.toLowerCase().includes("tie")){
+    reply = "For company tie-ups, please mail vjsolution.info@gmail.com or contact +91 7729950118.";
+  }
+
+  if(msg.toLowerCase().includes("apply")){
+    reply = "You can fill the application form on this website and submit directly through WhatsApp.";
+  }
+
+  body.innerHTML += `<p><b>AI:</b> ${reply}</p>`;
+  input.value = "";
+  body.scrollTop = body.scrollHeight;
 }
 </script>
 
