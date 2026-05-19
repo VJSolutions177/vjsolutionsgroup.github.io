@@ -2,372 +2,179 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VJ Solutions | Recruitment & Workforce Solutions</title>
-
-  <meta name="description" content="VJ Solutions provides recruitment, staffing, HR support, and placement services across India." />
-
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
-    }
-
-    body{
-      background:#0d0d0d;
-      color:white;
-      line-height:1.6;
-    }
-
-    header{
-      background:#000;
-      padding:20px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      border-bottom:1px solid gold;
-    }
-
-    .logo{
-      font-size:28px;
-      font-weight:bold;
-      color:gold;
-    }
-
-    nav a{
-      color:white;
-      text-decoration:none;
-      margin-left:25px;
-      transition:0.3s;
-    }
-
-    nav a:hover{
-      color:gold;
-    }
-
-    .hero{
-      height:90vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:20px;
-      background:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-      url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400&auto=format&fit=crop') center/cover;
-    }
-
-    .hero-content h1{
-      font-size:55px;
-      color:gold;
-      margin-bottom:20px;
-    }
-
-    .hero-content p{
-      max-width:800px;
-      margin:auto;
-      font-size:20px;
-      margin-bottom:30px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:14px 30px;
-      margin:10px;
-      border-radius:5px;
-      text-decoration:none;
-      font-weight:bold;
-      transition:0.3s;
-    }
-
-    .btn-primary{
-      background:gold;
-      color:black;
-    }
-
-    .btn-primary:hover{
-      background:white;
-    }
-
-    .btn-secondary{
-      border:2px solid gold;
-      color:gold;
-    }
-
-    .btn-secondary:hover{
-      background:gold;
-      color:black;
-    }
-
-    section{
-      padding:80px 8%;
-    }
-
-    .section-title{
-      text-align:center;
-      font-size:40px;
-      color:gold;
-      margin-bottom:50px;
-    }
-
-    .about p{
-      max-width:1000px;
-      margin:auto;
-      text-align:center;
-      font-size:18px;
-    }
-
-    .services{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-      gap:25px;
-    }
-
-    .card{
-      background:#1a1a1a;
-      padding:30px;
-      border-radius:10px;
-      border:1px solid #333;
-      transition:0.3s;
-    }
-
-    .card:hover{
-      transform:translateY(-10px);
-      border-color:gold;
-    }
-
-    .card h3{
-      color:gold;
-      margin-bottom:15px;
-    }
-
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
-      gap:20px;
-      text-align:center;
-    }
-
-    .stat-box{
-      background:#1a1a1a;
-      padding:30px;
-      border-radius:10px;
-    }
-
-    .stat-box h2{
-      color:gold;
-      font-size:40px;
-    }
-
-    .contact{
-      text-align:center;
-    }
-
-    .contact p{
-      margin:10px 0;
-      font-size:18px;
-    }
-
-    footer{
-      background:#000;
-      text-align:center;
-      padding:25px;
-      border-top:1px solid gold;
-    }
-
-    @media(max-width:768px){
-
-      header{
-        flex-direction:column;
-      }
-
-      nav{
-        margin-top:15px;
-      }
-
-      nav a{
-        margin:0 10px;
-      }
-
-      .hero-content h1{
-        font-size:38px;
-      }
-
-      .hero-content p{
-        font-size:18px;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VJ Solutions | Talent With Vision</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<header>
-  <div class="logo">
-  <img src="images/logo.png" alt="VJ Solutions Logo" style="height:60px;">
-</div>
+<header class="navbar">
+  <a href="#" class="logo-box">
+    <img src="assets/vj-logo.png" alt="VJ Solutions Logo" />
+    <div>
+      <h2>VJ SOLUTIONS</h2>
+      <p>Talent With Vision</p>
+    </div>
+  </a>
 
-  <nav>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <nav id="navLinks">
+    <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
-    <a href="#industries">Industries</a>
+    <a href="#jobs">Job Updates</a>
+    <a href="#tieup">Company Tie-Up</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<section class="hero">
-
+<section class="hero" id="home">
   <div class="hero-content">
-    <h1>Empowering Careers. Strengthening Businesses.</h1>
-
+    <span class="badge">Premium Recruitment & Career Support Partner</span>
+    <h1>Connecting Talent With Visionary Companies</h1>
     <p>
-      VJ Solutions is a trusted recruitment and workforce solutions company helping businesses hire skilled talent and helping candidates build successful careers across multiple industries.
+      VJ Solutions helps candidates and companies connect faster through verified
+      IT, Non-IT, Technical, Non-Technical, Pharma and corporate hiring support.
+    </p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn gold">Partner With Us</a>
+      <a href="#jobs" class="btn outline">Join Job Updates</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div><h2>IT</h2><p>Technical Hiring</p></div>
+  <div><h2>Non-IT</h2><p>Voice / Non-Voice</p></div>
+  <div><h2>Pharma</h2><p>Healthcare Hiring</p></div>
+  <div><h2>HR</h2><p>Screening Support</p></div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-title">
+    <h2>About VJ Solutions</h2>
+    <p>Professional recruitment support built for candidates and companies.</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-text">
+      <h3>Founder: G Vijay Netha</h3>
+      <p>
+        VJ Solutions is a Hyderabad-based professional recruitment and placement
+        support company focused on connecting skilled candidates with verified
+        hiring opportunities across multiple domains.
+      </p>
+      <p>
+        Our mission is to support candidates with job updates, screening guidance,
+        documentation assistance, interview coordination and onboarding support.
+      </p>
+      <a href="#contact" class="btn gold">Contact VJ Solutions</a>
+    </div>
+
+    <div class="image-card">
+      <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80" alt="Professional Team" />
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="services">
+  <div class="section-title">
+    <h2>Our Services</h2>
+    <p>Strong hiring support for companies and career support for candidates.</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>IT Technical Hiring</h3>
+      <p>Support for software, cloud, cybersecurity, testing, support and technical roles.</p>
+    </div>
+    <div class="card">
+      <h3>Non-Technical Hiring</h3>
+      <p>Voice, non-voice, customer support, operations, back-office and fresher roles.</p>
+    </div>
+    <div class="card">
+      <h3>Pharma & Healthcare</h3>
+      <p>Hiring support for pharma, healthcare, medical process and support roles.</p>
+    </div>
+    <div class="card">
+      <h3>Candidate Support</h3>
+      <p>Resume checking, HR screening guidance, interview coordination and onboarding support.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="jobs">
+  <div class="job-box">
+    <h2>Daily Verified Job Opportunities</h2>
+    <p>
+      Follow VJ Solutions for daily verified IT & Non-IT job openings, referrals,
+      hiring updates and candidate support.
     </p>
 
-    <a href="#contact" class="btn btn-primary">Hire Talent</a>
+    <div class="link-buttons">
+      <a href="https://whatsapp.com/channel/0029Vb7YMv4LtOj5oHBnzo13" target="_blank">WhatsApp Channel</a>
+      <a href="https://chat.whatsapp.com/Hj4wCQNqktPADPXjANz5XY" target="_blank">WhatsApp Community</a>
+      <a href="https://t.me/vijay17777" target="_blank">Telegram</a>
+    </div>
 
-    <a href="#contact" class="btn btn-secondary">Apply for Jobs</a>
+    <p class="note">
+      If you find any job suitable for your profile, forward it to us and we will
+      help you with the next hiring process.
+    </p>
+  </div>
+</section>
+
+<section class="section dark" id="tieup">
+  <div class="tieup">
+    <h2>Company Tie-Up With VJ Solutions</h2>
+    <p>
+      We are open to partnering with companies, HR teams, consultancies and hiring
+      managers for bulk hiring, fresher hiring, experienced hiring and domain-based recruitment.
+    </p>
+    <a href="mailto:vjsolution.info@gmail.com" class="btn gold">Send Tie-Up Mail</a>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="section-title">
+    <h2>Contact Us</h2>
+    <p>VJ Solutions, Hyderabad</p>
   </div>
 
-</section>
-
-<section id="about" class="about">
-
-  <h2 class="section-title">About Us</h2>
-
-  <p>
-    VJ Solutions is a fast-growing manpower and recruitment consultancy committed to connecting the right talent with the right opportunities.
-    <br><br>
-    We provide recruitment, staffing, HR support, training, and placement services for companies and job seekers across India.
-    Our mission is to simplify hiring while helping candidates build successful careers.
-  </p>
-
-</section>
-
-<section id="services">
-
-  <h2 class="section-title">Our Services</h2>
-
-  <div class="services">
-
-    <div class="card">
-      <h3>Recruitment Services</h3>
-      <p>Professional hiring solutions for companies across multiple industries.</p>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Phone</h3>
+      <p>+91 7729950118</p>
     </div>
-
-    <div class="card">
-      <h3>Staffing Solutions</h3>
-      <p>Temporary, permanent, and contract staffing support for businesses.</p>
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p>vjsolution.info@gmail.com</p>
+      <p>info@vjsolutionsgroup.com</p>
     </div>
-
-    <div class="card">
-      <h3>HR Support</h3>
-      <p>Interview coordination, onboarding support, and HR assistance.</p>
+    <div class="contact-card">
+      <h3>Location</h3>
+      <p>Hyderabad, Telangana</p>
     </div>
-
-    <div class="card">
-      <h3>Training & Guidance</h3>
-      <p>Helping candidates improve communication and interview confidence.</p>
-    </div>
-
-    <div class="card">
-      <h3>Bulk Hiring</h3>
-      <p>Efficient mass hiring solutions for startups and large companies.</p>
-    </div>
-
-    <div class="card">
-      <h3>Placement Assistance</h3>
-      <p>Connecting job seekers with verified career opportunities.</p>
-    </div>
-
   </div>
 
-</section>
-
-<section id="industries">
-
-  <h2 class="section-title">Industries We Serve</h2>
-
-  <div class="services">
-
-    <div class="card"><h3>IT & Software</h3></div>
-    <div class="card"><h3>BPO & Customer Support</h3></div>
-    <div class="card"><h3>Logistics & Delivery</h3></div>
-    <div class="card"><h3>Retail & Sales</h3></div>
-    <div class="card"><h3>Warehouse & Operations</h3></div>
-    <div class="card"><h3>Manufacturing</h3></div>
-
+  <div class="socials">
+    <a href="https://www.instagram.com/vj_solutions__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61553189472321" target="_blank">Facebook</a>
+    <a href="https://linkedin.com/in/vj-solutions-63a4bb3a1" target="_blank">LinkedIn</a>
+    <a href="https://t.me/vijay17777" target="_blank">Telegram</a>
   </div>
-
-</section>
-
-<section>
-
-  <h2 class="section-title">Our Growing Impact</h2>
-
-  <div class="stats">
-
-    <div class="stat-box">
-      <h2>500+</h2>
-      <p>Candidates Assisted</p>
-    </div>
-
-    <div class="stat-box">
-      <h2>100+</h2>
-      <p>Interviews Coordinated</p>
-    </div>
-
-    <div class="stat-box">
-      <h2>50+</h2>
-      <p>Hiring Partners</p>
-    </div>
-
-    <div class="stat-box">
-      <h2>24/7</h2>
-      <p>Candidate Support</p>
-    </div>
-
-  </div>
-
-</section>
-
-<section id="contact" class="contact">
-
-  <h2 class="section-title">Contact Us</h2>
-
-  <p><strong>Ganji Vijay Kumar</strong></p>
-
-  <p>VJ Solutions</p>
-
-  <p>
-    Plot 149, Raghavendra Homes, Bongloor X Road,
-    Ibrahimpatnam Mandal, K.V. Rangareddy,
-    Telangana - 501510
-  </p>
-
-  <p>📞 +91 7729950118</p>
-
-  <p>📧 vjsolution.info@gmail.com</p>
-
-  <br>
-
-  <a href="https://wa.me/917729950118" class="btn btn-primary">
-    WhatsApp Us
-  </a>
-
 </section>
 
 <footer>
-
-  <p>
-    © 2026 VJ Solutions. All Rights Reserved.
-  </p>
-
+  <p>© 2026 VJ Solutions | Talent With Vision</p>
 </footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
