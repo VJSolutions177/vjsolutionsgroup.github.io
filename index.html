@@ -6,11 +6,16 @@
   <title>VJ Solutions | Talent With Vision</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+<div id="loader">
+  <img src="assets/vj-logo.png" />
+  <h2>VJ SOLUTIONS</h2>
+</div>
 
 <header class="navbar">
-  <a href="#" class="logo-box">
-    <img src="assets/vj-logo.png" alt="VJ Solutions Logo" />
+  <a href="#home" class="logo">
+    <img src="assets/vj-logo.png" />
     <div>
       <h2>VJ SOLUTIONS</h2>
       <p>Talent With Vision</p>
@@ -19,143 +24,147 @@
 
   <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-  <nav id="navLinks">
+  <nav id="navMenu">
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
-    <a href="#jobs">Job Updates</a>
-    <a href="#tieup">Company Tie-Up</a>
+    <a href="#careers">Careers</a>
+    <a href="#apply">Apply</a>
+    <a href="#admin">Admin</a>
     <a href="#contact">Contact</a>
+    <button onclick="toggleTheme()" class="theme-btn">🌙 / ☀️</button>
   </nav>
 </header>
 
 <section class="hero" id="home">
+  <div class="particles"></div>
+  <video autoplay muted loop playsinline>
+    <source src="https://cdn.coverr.co/videos/coverr-business-meeting-1569/1080p.mp4" type="video/mp4">
+  </video>
+
   <div class="hero-content">
-    <span class="badge">Premium Recruitment & Career Support Partner</span>
-    <h1>Connecting Talent With Visionary Companies</h1>
+    <span class="badge">Premium Recruitment & Corporate Hiring Partner</span>
+    <h1>Connecting <span id="typing"></span></h1>
     <p>
-      VJ Solutions helps candidates and companies connect faster through verified
-      IT, Non-IT, Technical, Non-Technical, Pharma and corporate hiring support.
+      VJ Solutions helps companies and candidates connect through verified IT,
+      Non-IT, Pharma, Technical, Non-Technical and corporate hiring opportunities.
     </p>
-    <div class="hero-buttons">
-      <a href="#contact" class="btn gold">Partner With Us</a>
-      <a href="#jobs" class="btn outline">Join Job Updates</a>
-    </div>
+    <a href="#apply" class="btn gold">Apply Now</a>
+    <a href="#tieup" class="btn outline">Company Tie-Up</a>
   </div>
 </section>
 
-<section class="stats">
-  <div><h2>IT</h2><p>Technical Hiring</p></div>
-  <div><h2>Non-IT</h2><p>Voice / Non-Voice</p></div>
-  <div><h2>Pharma</h2><p>Healthcare Hiring</p></div>
-  <div><h2>HR</h2><p>Screening Support</p></div>
+<section class="stats reveal">
+  <div><h2 data-count="500">0</h2><p>Candidates Supported</p></div>
+  <div><h2 data-count="50">0</h2><p>Hiring Categories</p></div>
+  <div><h2 data-count="100">0</h2><p>Daily Job Updates</p></div>
+  <div><h2 data-count="24">0</h2><p>Support Hours</p></div>
 </section>
 
-<section class="section" id="about">
-  <div class="section-title">
-    <h2>About VJ Solutions</h2>
-    <p>Professional recruitment support built for candidates and companies.</p>
-  </div>
-
-  <div class="about-grid">
-    <div class="about-text">
+<section class="section reveal" id="about">
+  <h2>About VJ Solutions</h2>
+  <div class="two-col">
+    <img src="https://source.unsplash.com/900x700/?corporate-office,business" />
+    <div>
       <h3>Founder: G Vijay Netha</h3>
       <p>
-        VJ Solutions is a Hyderabad-based professional recruitment and placement
-        support company focused on connecting skilled candidates with verified
-        hiring opportunities across multiple domains.
+        VJ Solutions is a Hyderabad-based recruitment and career support company
+        focused on professional hiring, HR screening, interview coordination,
+        documentation support and onboarding guidance.
       </p>
       <p>
-        Our mission is to support candidates with job updates, screening guidance,
-        documentation assistance, interview coordination and onboarding support.
+        We support freshers and experienced candidates across IT, Non-IT,
+        Pharma, Healthcare, BPO, Operations, Voice and Non-Voice domains.
       </p>
-      <a href="#contact" class="btn gold">Contact VJ Solutions</a>
-    </div>
-
-    <div class="image-card">
-      <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80" alt="Professional Team" />
     </div>
   </div>
 </section>
 
-<section class="section dark" id="services">
-  <div class="section-title">
-    <h2>Our Services</h2>
-    <p>Strong hiring support for companies and career support for candidates.</p>
-  </div>
-
+<section class="section dark reveal" id="services">
+  <h2>Our Premium Services</h2>
   <div class="cards">
-    <div class="card">
-      <h3>IT Technical Hiring</h3>
-      <p>Support for software, cloud, cybersecurity, testing, support and technical roles.</p>
-    </div>
-    <div class="card">
-      <h3>Non-Technical Hiring</h3>
-      <p>Voice, non-voice, customer support, operations, back-office and fresher roles.</p>
-    </div>
-    <div class="card">
-      <h3>Pharma & Healthcare</h3>
-      <p>Hiring support for pharma, healthcare, medical process and support roles.</p>
-    </div>
-    <div class="card">
-      <h3>Candidate Support</h3>
-      <p>Resume checking, HR screening guidance, interview coordination and onboarding support.</p>
-    </div>
+    <div class="card"><h3>IT Technical Hiring</h3><p>Cloud, Azure, cybersecurity, software, support and testing roles.</p></div>
+    <div class="card"><h3>Non-Technical Hiring</h3><p>Voice, non-voice, BPO, operations and customer support roles.</p></div>
+    <div class="card"><h3>Pharma Hiring</h3><p>Healthcare, pharma, medical support and corporate healthcare roles.</p></div>
+    <div class="card"><h3>Resume & HR Support</h3><p>Resume guidance, interview preparation and HR coordination.</p></div>
   </div>
 </section>
 
-<section class="section" id="jobs">
-  <div class="job-box">
-    <h2>Daily Verified Job Opportunities</h2>
-    <p>
-      Follow VJ Solutions for daily verified IT & Non-IT job openings, referrals,
-      hiring updates and candidate support.
-    </p>
-
-    <div class="link-buttons">
-      <a href="https://whatsapp.com/channel/0029Vb7YMv4LtOj5oHBnzo13" target="_blank">WhatsApp Channel</a>
-      <a href="https://chat.whatsapp.com/Hj4wCQNqktPADPXjANz5XY" target="_blank">WhatsApp Community</a>
-      <a href="https://t.me/vijay17777" target="_blank">Telegram</a>
-    </div>
-
-    <p class="note">
-      If you find any job suitable for your profile, forward it to us and we will
-      help you with the next hiring process.
-    </p>
+<section class="section reveal">
+  <h2>Corporate Image Gallery</h2>
+  <div class="gallery">
+    <img src="https://source.unsplash.com/800x600/?business-meeting" />
+    <img src="https://source.unsplash.com/800x600/?multinational-company" />
+    <img src="https://source.unsplash.com/800x600/?technology-office" />
+    <img src="https://source.unsplash.com/800x600/?recruitment-team" />
   </div>
 </section>
 
-<section class="section dark" id="tieup">
-  <div class="tieup">
-    <h2>Company Tie-Up With VJ Solutions</h2>
+<section class="section dark reveal" id="careers">
+  <h2>Careers Page</h2>
+  <div class="cards">
+    <div class="card"><h3>IT Openings</h3><p>Technical support, cloud, software, cybersecurity and testing.</p></div>
+    <div class="card"><h3>Non-IT Openings</h3><p>Voice, non-voice, operations, customer support and BPO.</p></div>
+    <div class="card"><h3>Pharma Openings</h3><p>Healthcare, medical process and pharma support roles.</p></div>
+    <div class="card"><h3>Freshers Hiring</h3><p>Daily verified fresher and experienced openings.</p></div>
+  </div>
+</section>
+
+<section class="section reveal" id="apply">
+  <h2>Candidate Application Form</h2>
+  <form class="form" onsubmit="sendWhatsApp(event)">
+    <input id="name" placeholder="Full Name" required />
+    <input id="phone" placeholder="Phone Number" required />
+    <input id="email" placeholder="Email ID" required />
+    <select id="domain">
+      <option>IT Technical</option>
+      <option>Non-Technical</option>
+      <option>Pharma</option>
+      <option>Healthcare</option>
+      <option>BPO / Operations</option>
+    </select>
+    <textarea id="message" placeholder="Experience / Job Requirement"></textarea>
+    <button class="btn gold">Submit on WhatsApp</button>
+  </form>
+</section>
+
+<section class="section dark reveal" id="admin">
+  <h2>Admin Dashboard Preview</h2>
+  <div class="dashboard">
+    <div><h3>Candidate Registration</h3><p>Manage candidate details.</p></div>
+    <div><h3>Resume Upload System</h3><p>Connect later with Firebase/server.</p></div>
+    <div><h3>Recruiter Login Panel</h3><p>Static UI ready for backend.</p></div>
+    <div><h3>Job Posting System</h3><p>Add real backend later.</p></div>
+  </div>
+</section>
+
+<section class="section reveal" id="tieup">
+  <h2>Company Tie-Up</h2>
+  <div class="glass">
     <p>
-      We are open to partnering with companies, HR teams, consultancies and hiring
-      managers for bulk hiring, fresher hiring, experienced hiring and domain-based recruitment.
+      VJ Solutions is open for company tie-ups, HR partnerships, bulk hiring,
+      fresher hiring, experienced hiring and recruitment support.
     </p>
     <a href="mailto:vjsolution.info@gmail.com" class="btn gold">Send Tie-Up Mail</a>
   </div>
 </section>
 
-<section class="section" id="contact">
-  <div class="section-title">
-    <h2>Contact Us</h2>
-    <p>VJ Solutions, Hyderabad</p>
+<section class="section dark reveal">
+  <h2>AI Chatbot Section</h2>
+  <div class="chatbot">
+    <p><b>VJ AI Assistant:</b> Hi! Looking for jobs, hiring support, or company tie-up?</p>
+    <input placeholder="Type your question..." />
+    <button class="btn gold">Ask</button>
   </div>
+</section>
 
-  <div class="contact-grid">
-    <div class="contact-card">
-      <h3>Phone</h3>
-      <p>+91 7729950118</p>
-    </div>
-    <div class="contact-card">
-      <h3>Email</h3>
-      <p>vjsolution.info@gmail.com</p>
-      <p>info@vjsolutionsgroup.com</p>
-    </div>
-    <div class="contact-card">
-      <h3>Location</h3>
-      <p>Hyderabad, Telangana</p>
-    </div>
+<section class="section reveal" id="contact">
+  <h2>Contact VJ Solutions</h2>
+  <div class="contact">
+    <div><h3>Founder</h3><p>G Vijay Netha</p></div>
+    <div><h3>Phone</h3><p>+91 7729950118</p></div>
+    <div><h3>Email</h3><p>vjsolution.info@gmail.com<br>info@vjsolutionsgroup.com</p></div>
+    <div><h3>Location</h3><p>Hyderabad, Telangana</p></div>
   </div>
 
   <div class="socials">
@@ -163,16 +172,54 @@
     <a href="https://www.facebook.com/profile.php?id=61553189472321" target="_blank">Facebook</a>
     <a href="https://linkedin.com/in/vj-solutions-63a4bb3a1" target="_blank">LinkedIn</a>
     <a href="https://t.me/vijay17777" target="_blank">Telegram</a>
+    <a href="https://whatsapp.com/channel/0029Vb7YMv4LtOj5oHBnzo13" target="_blank">WhatsApp Channel</a>
+    <a href="https://chat.whatsapp.com/Hj4wCQNqktPADPXjANz5XY" target="_blank">WhatsApp Community</a>
   </div>
 </section>
 
+<a class="whatsapp" href="https://wa.me/917729950118" target="_blank">WhatsApp</a>
+
 <footer>
-  <p>© 2026 VJ Solutions | Talent With Vision</p>
+  <img src="assets/vj-logo.png" />
+  <p>© 2026 VJ Solutions | Talent With Vision | Hyderabad</p>
 </footer>
 
 <script>
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("active");
+function toggleMenu(){document.getElementById("navMenu").classList.toggle("active")}
+function toggleTheme(){document.body.classList.toggle("light")}
+window.onload=()=>{document.getElementById("loader").style.display="none"}
+
+const words=["Talent With Vision","Companies With Talent","Careers With Confidence"];
+let i=0,j=0,del=false;
+function type(){
+  const t=document.getElementById("typing");
+  let w=words[i];
+  t.innerHTML=w.substring(0,j);
+  if(!del && j++===w.length) del=true;
+  if(del && j--===0){del=false;i=(i+1)%words.length}
+  setTimeout(type,del?70:120)
+}
+type();
+
+window.addEventListener("scroll",()=>{
+  document.querySelectorAll(".reveal").forEach(el=>{
+    if(el.getBoundingClientRect().top < innerHeight-100) el.classList.add("active")
+  })
+})
+
+document.querySelectorAll("[data-count]").forEach(counter=>{
+  let target=+counter.dataset.count, c=0;
+  let run=setInterval(()=>{
+    c+=Math.ceil(target/80);
+    if(c>=target){c=target;clearInterval(run)}
+    counter.innerText=c+"+";
+  },25)
+})
+
+function sendWhatsApp(e){
+  e.preventDefault();
+  let text=`New Candidate Application%0AName: ${name.value}%0APhone: ${phone.value}%0AEmail: ${email.value}%0ADomain: ${domain.value}%0AMessage: ${message.value}`;
+  window.open(`https://wa.me/917729950118?text=${text}`,"_blank");
 }
 </script>
 
