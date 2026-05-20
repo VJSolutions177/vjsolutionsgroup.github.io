@@ -979,3 +979,25 @@ footer img{width:65px;margin-bottom:10px}
 #loader{
   transition:opacity .5s ease;
 }
+/* FORCE LOADER TO CLOSE */
+#loader{
+  animation:hideLoader 1s ease forwards;
+  animation-delay:1.5s;
+}
+
+@keyframes hideLoader{
+  to{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+  }
+}
+
+/* MOVE NAVBAR BELOW JOB TICKER */
+.navbar{
+  top:38px !important;
+}
+
+.hero{
+  padding-top:180px !important;
+}
