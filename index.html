@@ -94,7 +94,25 @@ window.addEventListener("scroll", () => {
 </head>
 
 <body>
+<!-- LIVE JOB ALERT TICKER -->
 
+<div class="job-alert-bar">
+  <div class="job-alert-track">
+
+    <span>🔥 Wipro Hiring Freshers - Hyderabad</span>
+    <span>💼 Non-Voice Process Openings Available</span>
+    <span>🚀 IT Technical Support Hiring</span>
+    <span>🏢 Pharma & Healthcare Roles Open</span>
+    <span>📢 Daily Verified Jobs by VJ Solutions</span>
+
+    <span>🔥 Wipro Hiring Freshers - Hyderabad</span>
+    <span>💼 Non-Voice Process Openings Available</span>
+    <span>🚀 IT Technical Support Hiring</span>
+    <span>🏢 Pharma & Healthcare Roles Open</span>
+    <span>📢 Daily Verified Jobs by VJ Solutions</span>
+
+  </div>
+</div>
 <div class="scroll-progress" id="scrollProgress"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
 
@@ -127,6 +145,31 @@ window.addEventListener("scroll", () => {
 </header>
 
 <section class="hero" id="home">
+  <!-- GLASSMORPHISM STRIP -->
+
+<section class="glass-strip reveal">
+
+  <div class="glass-box">
+    <h3>500+</h3>
+    <p>Candidates Supported</p>
+  </div>
+
+  <div class="glass-box">
+    <h3>24/7</h3>
+    <p>Support & Coordination</p>
+  </div>
+
+  <div class="glass-box">
+    <h3>IT + Non-IT</h3>
+    <p>Recruitment Domains</p>
+  </div>
+
+  <div class="glass-box">
+    <h3>Verified</h3>
+    <p>Daily Job Updates</p>
+  </div>
+
+</section>
   <video class="hero-video" autoplay muted loop playsinline>
     <source src="https://cdn.coverr.co/videos/coverr-business-meeting-1569/1080p.mp4" type="video/mp4">
   </video>
@@ -598,7 +641,27 @@ window.addEventListener("scroll", () => {
     <button onclick="sendChat()">Send</button>
   </div>
 </div>
+<!-- FLOATING SOCIAL DOCK -->
 
+<div class="social-dock">
+
+  <a href="https://www.instagram.com/vj_solutions__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+    📸
+  </a>
+
+  <a href="https://linkedin.com/in/vj-solutions-63a4bb3a1" target="_blank">
+    💼
+  </a>
+
+  <a href="https://t.me/vijay17777" target="_blank">
+    ✈️
+  </a>
+
+  <a href="https://www.facebook.com/profile.php?id=61553189472321" target="_blank">
+    👍
+  </a>
+
+</div>
 <a class="whatsapp" href="https://wa.me/917729950118" target="_blank">💬 WhatsApp</a>
 <a class="apply-float" href="#apply">🚀 Apply Now</a>
 
@@ -723,7 +786,23 @@ window.addEventListener("scroll", () => {
 
 const cursorGlow = document.getElementById("cursorGlow");
 
-document.addEventListener("mousemove", (e) => {
+  document.addEventListener("mousemove", e => {
+
+  const particle = document.createElement("div");
+
+  particle.className = "mouse-particle";
+
+  particle.style.left = e.pageX + "px";
+
+  particle.style.top = e.pageY + "px";
+
+  document.body.appendChild(particle);
+
+  setTimeout(() => {
+    particle.remove();
+  }, 700);
+
+});
   cursorGlow.style.left = e.clientX + "px";
   cursorGlow.style.top = e.clientY + "px";
 });
@@ -770,7 +849,55 @@ document.querySelectorAll(".tilt-card").forEach(card => {
     }
   });
 });
-</script>
+  const popupData = [
+  {
+    title:"New Candidate Registered",
+    text:"HR Screening Scheduled"
+  },
+  {
+    title:"Interview Update",
+    text:"Face-to-Face Round Confirmed"
+  },
+  {
+    title:"Recruiter Connected",
+    text:"New Partnership Request"
+  },
+  {
+    title:"New Job Alert",
+    text:"Freshers Hiring Open"
+  }
+];
 
+let popupIndex = 0;
+
+setInterval(() => {
+
+  const popup = document.getElementById("livePopup");
+
+  document.getElementById("popupTitle").innerText =
+    popupData[popupIndex].title;
+
+  document.getElementById("popupText").innerText =
+    popupData[popupIndex].text;
+
+  popup.classList.add("show-popup");
+
+  setTimeout(() => {
+    popup.classList.remove("show-popup");
+  }, 3500);
+
+  popupIndex = (popupIndex + 1) % popupData.length;
+
+}, 5000);
+</script>
+<!-- LIVE POPUP -->
+
+<div class="live-popup" id="livePopup">
+  <span>🚀</span>
+  <div>
+    <h4 id="popupTitle">New Candidate Registered</h4>
+    <p id="popupText">HR Screening Scheduled</p>
+  </div>
+</div>
 </body>
 </html>
