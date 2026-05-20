@@ -443,9 +443,6 @@ window.addEventListener("scroll", () => {
   </div>
 </section>
 
-<!-- FAQ SECTION -->
-<!-- PREMIUM MNC FAQ SECTION -->
-
 <section class="section reveal premium-faq-section" id="faq">
 
   <div class="faq-floating-icons">
@@ -458,9 +455,7 @@ window.addEventListener("scroll", () => {
   <div class="faq-header">
     <span>VJ SOLUTIONS SUPPORT</span>
     <h2>Frequently Asked Questions</h2>
-    <p>
-      Clear answers for candidates, companies, HR teams and hiring partners.
-    </p>
+    <p>Clear answers for candidates, companies, HR teams and hiring partners.</p>
   </div>
 
   <div class="premium-faq-grid">
@@ -477,75 +472,60 @@ window.addEventListener("scroll", () => {
       </a>
     </div>
 
-    <div class="faq-container premium-faq-container">
+    <div class="premium-faq-container">
 
-      <div class="faq-item premium-faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
+      <div class="premium-faq-item">
+        <button type="button" class="faq-question">
           <span class="faq-icon">💼</span>
-          Do you provide IT and Non-IT job updates?
-          <b>+</b>
+          <span class="faq-title">Do you provide IT and Non-IT job updates?</span>
+          <span class="faq-plus">+</span>
         </button>
         <div class="faq-answer">
-          <p>
-            Yes. VJ Solutions shares verified IT, Non-IT, Pharma, Healthcare,
-            BPO, Voice and Non-Voice job updates.
-          </p>
+          <p>Yes. VJ Solutions shares verified IT, Non-IT, Pharma, Healthcare, BPO, Voice and Non-Voice job updates.</p>
         </div>
       </div>
 
-      <div class="faq-item premium-faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
+      <div class="premium-faq-item">
+        <button type="button" class="faq-question">
           <span class="faq-icon">🎤</span>
-          Do you support HR screening and interviews?
-          <b>+</b>
+          <span class="faq-title">Do you support HR screening and interviews?</span>
+          <span class="faq-plus">+</span>
         </button>
         <div class="faq-answer">
-          <p>
-            Yes. We guide candidates for HR screening, virtual interviews,
-            face-to-face interviews and interview communication.
-          </p>
+          <p>Yes. We guide candidates for HR screening, virtual interviews, face-to-face interviews and interview communication.</p>
         </div>
       </div>
 
-      <div class="faq-item premium-faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
+      <div class="premium-faq-item">
+        <button type="button" class="faq-question">
           <span class="faq-icon">🤝</span>
-          How can companies tie up with VJ Solutions?
-          <b>+</b>
+          <span class="faq-title">How can companies tie up with VJ Solutions?</span>
+          <span class="faq-plus">+</span>
         </button>
         <div class="faq-answer">
-          <p>
-            Companies can contact us through email or WhatsApp for bulk hiring,
-            fresher hiring, experienced hiring and recruitment support.
-          </p>
+          <p>Companies can contact us through email or WhatsApp for bulk hiring, fresher hiring, experienced hiring and recruitment support.</p>
         </div>
       </div>
 
-      <div class="faq-item premium-faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
+      <div class="premium-faq-item">
+        <button type="button" class="faq-question">
           <span class="faq-icon">📄</span>
-          How can candidates apply?
-          <b>+</b>
+          <span class="faq-title">How can candidates apply?</span>
+          <span class="faq-plus">+</span>
         </button>
         <div class="faq-answer">
-          <p>
-            Candidates can fill the application form on this website or contact
-            VJ Solutions directly through WhatsApp.
-          </p>
+          <p>Candidates can fill the application form on this website or contact VJ Solutions directly through WhatsApp.</p>
         </div>
       </div>
 
-      <div class="faq-item premium-faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
+      <div class="premium-faq-item">
+        <button type="button" class="faq-question">
           <span class="faq-icon">🏢</span>
-          Which domains do you support?
-          <b>+</b>
+          <span class="faq-title">Which domains do you support?</span>
+          <span class="faq-plus">+</span>
         </button>
         <div class="faq-answer">
-          <p>
-            We support IT Technical, Non-Technical, Pharma, Healthcare,
-            BPO, Voice Process, Non-Voice Process and Operations roles.
-          </p>
+          <p>We support IT Technical, Non-Technical, Pharma, Healthcare, BPO, Voice Process, Non-Voice Process and Operations roles.</p>
         </div>
       </div>
 
@@ -762,6 +742,32 @@ document.querySelectorAll(".tilt-card").forEach(card => {
 
   card.addEventListener("mouseleave", () => {
     card.style.transform = "rotateX(0deg) rotateY(0deg)";
+  });
+});
+
+  document.querySelectorAll(".premium-faq-item .faq-question").forEach(button => {
+  button.addEventListener("click", () => {
+    const item = button.closest(".premium-faq-item");
+    const answer = item.querySelector(".faq-answer");
+    const plus = item.querySelector(".faq-plus");
+
+    document.querySelectorAll(".premium-faq-item").forEach(otherItem => {
+      if(otherItem !== item){
+        otherItem.classList.remove("active");
+        otherItem.querySelector(".faq-answer").style.maxHeight = "0px";
+        otherItem.querySelector(".faq-plus").textContent = "+";
+      }
+    });
+
+    if(item.classList.contains("active")){
+      item.classList.remove("active");
+      answer.style.maxHeight = "0px";
+      plus.textContent = "+";
+    } else {
+      item.classList.add("active");
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      plus.textContent = "−";
+    }
   });
 });
 </script>
