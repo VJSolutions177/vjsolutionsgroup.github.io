@@ -8,7 +8,8 @@
 </head>
 
 <body>
-
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 <div id="loader">
   <img src="assets/vj-logo.png" alt="VJ Solutions">
   <h2>VJ SOLUTIONS</h2>
@@ -37,6 +38,9 @@
 </header>
 
 <section class="hero" id="home">
+  <video class="hero-video" autoplay muted loop playsinline>
+  <source src="https://cdn.coverr.co/videos/coverr-business-meeting-1569/1080p.mp4" type="video/mp4">
+</video>
   <div class="gold-particles"></div>
 
   <div class="hero-left">
@@ -129,7 +133,31 @@
     </div>
   </div>
 </section>
+<section class="section dark reveal" id="trusted">
+  <h2>Trusted Hiring Network</h2>
 
+  <div class="logo-slider">
+    <div class="logo-track">
+      <span>ACCENTURE</span>
+      <span>WIPRO</span>
+      <span>COGNIZANT</span>
+      <span>TCS</span>
+      <span>INFOSYS</span>
+      <span>TECH MAHINDRA</span>
+      <span>HCL</span>
+      <span>CAPGEMINI</span>
+
+      <span>ACCENTURE</span>
+      <span>WIPRO</span>
+      <span>COGNIZANT</span>
+      <span>TCS</span>
+      <span>INFOSYS</span>
+      <span>TECH MAHINDRA</span>
+      <span>HCL</span>
+      <span>CAPGEMINI</span>
+    </div>
+  </div>
+</section>
 <section class="section reveal" id="about">
   <h2>About VJ Solutions</h2>
 
@@ -277,6 +305,37 @@
 </section>
 
 <a class="apply-float" href="#apply">Apply Now</a>
+  <section class="section reveal" id="premium-motion">
+  <h2>Premium Hiring Experience</h2>
+
+  <div class="premium-motion-grid">
+
+    <div class="motion-card tilt-card">
+      <div class="lottie-circle">
+        <span></span><span></span><span></span>
+      </div>
+      <h3>Fast Candidate Movement</h3>
+      <p>From registration to HR screening and interview updates.</p>
+    </div>
+
+    <div class="motion-card tilt-card">
+      <div class="lottie-bars">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <h3>Live Hiring Flow</h3>
+      <p>Structured process for IT, Non-IT, Pharma and BPO roles.</p>
+    </div>
+
+    <div class="motion-card tilt-card">
+      <div class="lottie-check">
+        <span>✓</span>
+      </div>
+      <h3>Verified Opportunities</h3>
+      <p>Daily job updates and professional candidate coordination.</p>
+    </div>
+
+  </div>
+</section>
 <section class="section reveal" id="contact">
   <h2>Contact VJ Solutions</h2>
 
@@ -417,6 +476,36 @@ function sendChat(){
   input.value = "";
   body.scrollTop = body.scrollHeight;
 }
+  window.addEventListener("scroll", () => {
+  let winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.getElementById("scrollProgress").style.width = scrolled + "%";
+});
+
+const cursorGlow = document.getElementById("cursorGlow");
+
+document.addEventListener("mousemove", (e) => {
+  cursorGlow.style.left = e.clientX + "px";
+  cursorGlow.style.top = e.clientY + "px";
+});
+
+document.querySelectorAll(".tilt-card").forEach(card => {
+  card.addEventListener("mousemove", e => {
+    let rect = card.getBoundingClientRect();
+    let x = e.clientX - rect.left;
+    let y = e.clientY - rect.top;
+
+    let rotateX = ((y / rect.height) - 0.5) * -14;
+    let rotateY = ((x / rect.width) - 0.5) * 14;
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "rotateX(0deg) rotateY(0deg)";
+  });
+});
 </script>
 
 </body>
