@@ -97,23 +97,7 @@ window.addEventListener("scroll", () => {
 <body>
 <!-- LIVE JOB ALERT TICKER -->
 
-<div class="job-alert-bar">
-  <div class="job-alert-track">
 
-    <span>🔥 Wipro Hiring Freshers - Hyderabad</span>
-    <span>💼 Non-Voice Process Openings Available</span>
-    <span>🚀 IT Technical Support Hiring</span>
-    <span>🏢 Pharma & Healthcare Roles Open</span>
-    <span>📢 Daily Verified Jobs by VJ Solutions</span>
-
-    <span>🔥 Wipro Hiring Freshers - Hyderabad</span>
-    <span>💼 Non-Voice Process Openings Available</span>
-    <span>🚀 IT Technical Support Hiring</span>
-    <span>🏢 Pharma & Healthcare Roles Open</span>
-    <span>📢 Daily Verified Jobs by VJ Solutions</span>
-
-  </div>
-</div>
 <div class="scroll-progress" id="scrollProgress"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
 
@@ -860,55 +844,11 @@ document.querySelectorAll(".tilt-card").forEach(card => {
     }
   });
 });
-  const popupData = [
-  {
-    title:"New Candidate Registered",
-    text:"HR Screening Scheduled"
-  },
-  {
-    title:"Interview Update",
-    text:"Face-to-Face Round Confirmed"
-  },
-  {
-    title:"Recruiter Connected",
-    text:"New Partnership Request"
-  },
-  {
-    title:"New Job Alert",
-    text:"Freshers Hiring Open"
-  }
-];
 
-let popupIndex = 0;
 
-setInterval(() => {
-
-  const popup = document.getElementById("livePopup");
-
-  document.getElementById("popupTitle").innerText =
-    popupData[popupIndex].title;
-
-  document.getElementById("popupText").innerText =
-    popupData[popupIndex].text;
-
-  popup.classList.add("show-popup");
-
-  setTimeout(() => {
-    popup.classList.remove("show-popup");
-  }, 3500);
-
-  popupIndex = (popupIndex + 1) % popupData.length;
-
-}, 5000);
 </script>
 <!-- LIVE POPUP -->
 
-<div class="live-popup" id="livePopup">
-  <span>🚀</span>
-  <div>
-    <h4 id="popupTitle">New Candidate Registered</h4>
-    <p id="popupText">HR Screening Scheduled</p>
-  </div>
-</div>
+
 </body>
 </html>
