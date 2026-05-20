@@ -976,3 +976,6 @@ footer img{width:65px;margin-bottom:10px}
   }
 
 }
+#loader{
+  transition:opacity .5s ease;
+}
