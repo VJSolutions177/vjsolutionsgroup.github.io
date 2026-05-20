@@ -154,7 +154,19 @@
 </svg>
 
 </div>
-
+<div class="animated-icon-card">
+  <div class="svg-icon">
+    <svg viewBox="0 0 100 100">
+      <circle cx="35" cy="35" r="14"></circle>
+      <circle cx="65" cy="35" r="14"></circle>
+      <path d="M20 82 C22 60, 48 60, 50 82"></path>
+      <path d="M50 82 C52 60, 78 60, 80 82"></path>
+      <path d="M42 50 H58"></path>
+    </svg>
+  </div>
+  <h3>Interview Coordination</h3>
+  <p>Virtual, HR screening and face-to-face interview support.</p>
+</div>
 <h3>Candidate Sourcing</h3>
 
 <p>
@@ -417,7 +429,41 @@ WhatsApp
 </a>
 
 <script>
+function toggleChat(){
+  document.getElementById("chatbox").classList.toggle("active");
+}
 
+function sendChat(){
+  let input = document.getElementById("chatInput");
+  let body = document.getElementById("chatBody");
+  let msg = input.value.trim();
+
+  if(!msg) return;
+
+  body.innerHTML += `<p><b>You:</b> ${msg}</p>`;
+
+  let reply = "Please contact VJ Solutions on WhatsApp: +91 7729950118 for faster support.";
+
+  if(msg.toLowerCase().includes("job")){
+    reply = "We share verified IT, Non-IT, Pharma and fresher job updates daily. Join our WhatsApp Channel.";
+  }
+
+  if(msg.toLowerCase().includes("interview")){
+    reply = "VJ Solutions supports HR screening, virtual interview and face-to-face interview coordination.";
+  }
+
+  if(msg.toLowerCase().includes("apply")){
+    reply = "Go to the Apply section and submit your details. You can also WhatsApp us directly.";
+  }
+
+  if(msg.toLowerCase().includes("tie")){
+    reply = "For company tie-ups, mail vjsolution.info@gmail.com or contact +91 7729950118.";
+  }
+
+  body.innerHTML += `<p><b>AI:</b> ${reply}</p>`;
+  input.value = "";
+  body.scrollTop = body.scrollHeight;
+}
 function toggleMenu(){
 document.getElementById("navMenu").classList.toggle("active");
 }
@@ -505,6 +551,25 @@ cursorGlow.style.top = e.clientY + "px";
 });
 
 </script>
+<button class="chat-open" onclick="toggleChat()">AI Chat</button>
 
+<div class="chatbox" id="chatbox">
+  <div class="chat-head">
+    <b>VJ AI Assistant</b>
+    <button onclick="toggleChat()">×</button>
+  </div>
+
+  <div class="chat-body" id="chatBody">
+    <p><b>AI:</b> Hi! I can help with jobs, applications, interview process and company tie-ups.</p>
+  </div>
+
+  <div class="chat-input">
+    <input id="chatInput" placeholder="Type your question...">
+    <button onclick="sendChat()">Send</button>
+  </div>
+</div>
+
+<a class="whatsapp" href="https://wa.me/917729950118" target="_blank">💬 WhatsApp</a>
+<a class="apply-float" href="#apply">🚀 Apply Now</a>
 </body>
 </html>
