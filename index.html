@@ -36,6 +36,38 @@
       "https://t.me/vijay17777"
     ]
   }
+    function toggleFAQ(button){
+  const item = button.parentElement;
+  const answer = item.querySelector(".faq-answer");
+  const icon = button.querySelector("span");
+
+  item.classList.toggle("active");
+
+  if(item.classList.contains("active")){
+    answer.style.maxHeight = answer.scrollHeight + "px";
+    icon.textContent = "−";
+  } else {
+    answer.style.maxHeight = "0";
+    icon.textContent = "+";
+  }
+}
+
+function scrollToTop(){
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+window.addEventListener("scroll", () => {
+  const topBtn = document.querySelector(".back-to-top");
+
+  if(window.scrollY > 600){
+    topBtn.classList.add("show");
+  } else {
+    topBtn.classList.remove("show");
+  }
+});
   </script>
 </head>
 
