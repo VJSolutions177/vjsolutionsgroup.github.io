@@ -665,17 +665,13 @@ function toggleTheme(){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    const loader = document.getElementById("loader");
-    if(loader){
-      loader.style.opacity = "0";
-      loader.style.pointerEvents = "none";
+  const loader = document.getElementById("loader");
 
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 500);
-    }
-  }, 1200);
+  if(loader){
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 1000);
+  }
 });
 
 const words = ["Talent With Vision", "Companies With Talent", "Careers With Confidence"];
@@ -781,23 +777,6 @@ window.addEventListener("scroll", () => {
 
 const cursorGlow = document.getElementById("cursorGlow");
 
-  document.addEventListener("mousemove", e => {
-
-  const particle = document.createElement("div");
-
-  particle.className = "mouse-particle";
-
-  particle.style.left = e.pageX + "px";
-
-  particle.style.top = e.pageY + "px";
-
-  document.body.appendChild(particle);
-
-  setTimeout(() => {
-    particle.remove();
-  }, 700);
-
-});
   cursorGlow.style.left = e.clientX + "px";
   cursorGlow.style.top = e.clientY + "px";
 });
