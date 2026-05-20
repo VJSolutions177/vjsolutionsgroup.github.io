@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VJ Solutions | Talent With Vision</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VJ Solutions | Talent With Vision</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -14,423 +12,448 @@
 <div class="scroll-progress" id="scrollProgress"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
 
-<!-- LOADER -->
-
 <div id="loader">
-  <img src="assets/vj-logo.png">
+  <img src="assets/vj-logo.png" alt="VJ Solutions">
   <h2>VJ SOLUTIONS</h2>
 </div>
 
-<!-- NAVBAR -->
-
 <header class="navbar">
-
-  <div class="logo">
-
-    <img src="assets/vj-logo.png">
-
+  <a href="#home" class="logo">
+    <img src="assets/vj-logo.png" alt="VJ Solutions Logo">
     <div>
       <h2>VJ SOLUTIONS</h2>
       <p>Talent With Vision</p>
     </div>
-
-  </div>
+  </a>
 
   <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
   <nav id="navMenu">
-
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
-    <a href="#careers">Careers</a>
+    <a href="#jobs">Jobs</a>
+    <a href="#process">Process</a>
     <a href="#apply">Apply</a>
     <a href="#contact">Contact</a>
-
-    <button class="theme-btn" onclick="toggleTheme()">
-      🌙
-    </button>
-
+    <button class="theme-btn" onclick="toggleTheme()">🌙 / ☀️</button>
   </nav>
-
 </header>
 
-<!-- HERO -->
-
 <section class="hero" id="home">
-
-  <video autoplay muted loop playsinline class="hero-video">
+  <video class="hero-video" autoplay muted loop playsinline>
     <source src="https://cdn.coverr.co/videos/coverr-business-meeting-1569/1080p.mp4" type="video/mp4">
   </video>
 
   <div class="gold-particles"></div>
 
-  <div class="hero-left">
-
-    <span class="badge">
-      Premium Recruitment & Hiring Partner
-    </span>
-
-    <h1>
-      Connecting
-      <span id="typing"></span>
-    </h1>
-
+  <div class="hero-left reveal">
+    <span class="badge">Premium Recruitment & Corporate Hiring Partner</span>
+    <h1>Connecting <span id="typing"></span></h1>
     <p>
-      VJ Solutions helps companies and candidates with
-      verified hiring, HR coordination, screening and onboarding.
+      VJ Solutions connects companies with verified talent across IT, Non-IT,
+      Pharma, Healthcare, Technical and Non-Technical domains.
     </p>
 
-    <a href="#apply" class="btn gold">
-      Apply Now
-    </a>
-
-    <a href="#services" class="btn outline">
-      Know More
-    </a>
-
+    <a href="#apply" class="btn gold">Apply Now</a>
+    <a href="#services" class="btn outline">Know More</a>
   </div>
 
-  <div class="hero-right">
-
+  <div class="hero-right reveal">
     <div class="orbit">
-
       <span></span>
       <span></span>
       <span></span>
+      <img src="assets/vj-logo.png" alt="VJ Solutions">
+    </div>
+  </div>
+</section>
 
-      <img src="assets/vj-logo.png">
+<section class="wipro-style reveal">
+  <div class="feature-text">
+    <h2>AI-Powered Hiring Support</h2>
+    <p>
+      Helping candidates and companies move faster with structured screening,
+      interview coordination and verified job updates.
+    </p>
+    <a href="#contact" class="know-btn">Know More →</a>
+  </div>
 
+  <div class="feature-img">
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Business Meeting">
+  </div>
+</section>
+
+<section class="stats reveal">
+  <div><h2 data-count="500">0</h2><p>Candidates Supported</p></div>
+  <div><h2 data-count="50">0</h2><p>Hiring Categories</p></div>
+  <div><h2 data-count="100">0</h2><p>Daily Job Updates</p></div>
+  <div><h2 data-count="24">0</h2><p>Support Hours</p></div>
+</section>
+
+<section class="section dark reveal" id="animated-icons">
+  <h2>End-to-End Recruitment Support</h2>
+
+  <div class="animated-icon-grid">
+
+    <div class="animated-icon-card">
+      <div class="svg-icon">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="35" r="18"></circle>
+          <path d="M25 85 C28 60, 72 60, 75 85"></path>
+        </svg>
+      </div>
+      <h3>Candidate Sourcing</h3>
+      <p>Verified profiles for IT, Non-IT and Pharma hiring.</p>
+    </div>
+
+    <div class="animated-icon-card">
+      <div class="svg-icon">
+        <svg viewBox="0 0 100 100">
+          <rect x="20" y="25" width="60" height="45" rx="8"></rect>
+          <path d="M30 40 H70 M30 55 H58"></path>
+        </svg>
+      </div>
+      <h3>HR Screening</h3>
+      <p>Interview communication and HR screening guidance.</p>
+    </div>
+
+    <div class="animated-icon-card">
+      <div class="svg-icon">
+        <svg viewBox="0 0 100 100">
+          <circle cx="35" cy="35" r="14"></circle>
+          <circle cx="65" cy="35" r="14"></circle>
+          <path d="M20 82 C22 60, 48 60, 50 82"></path>
+          <path d="M50 82 C52 60, 78 60, 80 82"></path>
+          <path d="M42 50 H58"></path>
+        </svg>
+      </div>
+      <h3>Interview Coordination</h3>
+      <p>Virtual, HR screening and face-to-face interview support.</p>
+    </div>
+
+    <div class="animated-icon-card">
+      <div class="svg-icon">
+        <svg viewBox="0 0 100 100">
+          <path d="M20 55 L40 75 L80 25"></path>
+          <circle cx="50" cy="50" r="38"></circle>
+        </svg>
+      </div>
+      <h3>Offer Support</h3>
+      <p>Documentation, onboarding and joining coordination.</p>
     </div>
 
   </div>
-
 </section>
 
-<!-- STATS -->
+<section class="section dark reveal" id="network">
+  <h2>Hiring Network & Target Companies</h2>
 
-<section class="stats reveal">
-
-  <div>
-    <h2 data-count="500">0</h2>
-    <p>Candidates Supported</p>
+  <div class="logo-slider">
+    <div class="logo-track">
+      <span>ACCENTURE</span><span>WIPRO</span><span>COGNIZANT</span><span>TCS</span>
+      <span>INFOSYS</span><span>TECH MAHINDRA</span><span>HCL</span><span>CAPGEMINI</span>
+      <span>ACCENTURE</span><span>WIPRO</span><span>COGNIZANT</span><span>TCS</span>
+      <span>INFOSYS</span><span>TECH MAHINDRA</span><span>HCL</span><span>CAPGEMINI</span>
+    </div>
   </div>
-
-  <div>
-    <h2 data-count="50">0</h2>
-    <p>Hiring Categories</p>
-  </div>
-
-  <div>
-    <h2 data-count="100">0</h2>
-    <p>Daily Job Updates</p>
-  </div>
-
-  <div>
-    <h2 data-count="24">0</h2>
-    <p>Support Hours</p>
-  </div>
-
 </section>
-
-<!-- ANIMATED ICONS -->
-
-<section class="section dark reveal">
-
-<h2>Smart Hiring Motion Icons</h2>
-
-<div class="animated-icon-grid">
-
-<div class="animated-icon-card">
-
-<div class="svg-icon">
-
-<svg viewBox="0 0 100 100">
-
-<circle cx="50" cy="35" r="18"></circle>
-
-<path d="M25 85 C28 60, 72 60, 75 85"></path>
-
-</svg>
-
-</div>
-
-  <h3>Interview Coordination</h3>
-  <p>Virtual, HR screening and face-to-face interview support.</p>
-</div>
-<h3>Candidate Sourcing</h3>
-
-<p>
-Verified profiles for IT, Non-IT and Pharma hiring.
-</p>
-
-</div>
-
-<div class="animated-i
-  con-card">
-
-<div class="svg-icon">
-
-<svg viewBox="0 0 100 100">
-
-<rect x="20" y="25" width="60" height="45" rx="8"></rect>
-
-<path d="M30 40 H70 M30 55 H58"></path>
-
-</svg>
-
-</div>
-
-<h3>HR Screening</h3>
-
-<p>
-Interview communication and screening guidance.
-</p>
-
-</div>
-
-<div class="animated-icon-card">
-
-<div class="svg-icon">
-
-<svg viewBox="0 0 100 100">
-
-<path d="M20 55 L40 75 L80 25"></path>
-
-<circle cx="50" cy="50" r="38"></circle>
-
-</svg>
-
-</div>
-  <h3>Schedule Interview</h3>
-<div class="animated-icon-card">
-  <div class="svg-icon">
-    <svg viewBox="0 0 100 100">
-      <circle cx="35" cy="35" r="14"></circle>
-      <circle cx="65" cy="35" r="14"></circle>
-      <path d="M20 82 C22 60, 48 60, 50 82"></path>
-      <path d="M50 82 C52 60, 78 60, 80 82"></path>
-      <path d="M42 50 H58"></path>
-    </svg>
-  </div>
-<h4>Offer Support</h4>
-
-<p>
-Documentation and onboarding coordination.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- TRUSTED -->
-
-<section class="section dark reveal">
-
-<h2>Trusted Hiring Network</h2>
-
-<div class="logo-slider">
-
-<div class="logo-track">
-
-<span>ACCENTURE</span>
-<span>WIPRO</span>
-<span>COGNIZANT</span>
-<span>TCS</span>
-<span>INFOSYS</span>
-<span>TECH MAHINDRA</span>
-<span>HCL</span>
-
-<span>ACCENTURE</span>
-<span>WIPRO</span>
-<span>COGNIZANT</span>
-<span>TCS</span>
-<span>INFOSYS</span>
-<span>TECH MAHINDRA</span>
-<span>HCL</span>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ABOUT -->
 
 <section class="section reveal" id="about">
+  <h2>About VJ Solutions</h2>
 
-<h2>About VJ Solutions</h2>
+  <div class="two-col">
+    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Corporate Office">
 
-<div class="two-col">
-
-<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80">
-
-<div>
-
-<h3>Founder: G Vijay Netha</h3>
-
-<p>
-VJ Solutions is a Hyderabad-based recruitment and hiring company.
-We support IT, Non-IT, Pharma and Healthcare hiring.
-</p>
-
-<p>
-We provide interview coordination, onboarding support,
-daily verified jobs and hiring solutions.
-</p>
-
-</div>
-
-</div>
-
+    <div>
+      <h3>Founder: G Vijay Netha</h3>
+      <p>
+        VJ Solutions is a Hyderabad-based recruitment and career support company.
+        We support candidates with job updates, HR screening, interview preparation,
+        documentation assistance and onboarding coordination.
+      </p>
+      <p>
+        Our goal is to build strong company tie-ups and help candidates reach
+        verified opportunities faster.
+      </p>
+      <a href="#contact" class="btn gold">Contact VJ Solutions</a>
+    </div>
+  </div>
 </section>
-
-<!-- SERVICES -->
 
 <section class="section dark reveal" id="services">
+  <h2>Our Services</h2>
 
-<h2>Our Services</h2>
-
-<div class="cards">
-
-<div class="card tilt-card">
-<h3>IT Technical Hiring</h3>
-<p>Cloud, Azure, software support and cybersecurity hiring.</p>
-</div>
-
-<div class="card tilt-card">
-<h3>Non Technical Hiring</h3>
-<p>BPO, customer support and operations hiring.</p>
-</div>
-
-<div class="card tilt-card">
-<h3>Pharma Hiring</h3>
-<p>Healthcare and medical process opportunities.</p>
-</div>
-
-<div class="card tilt-card">
-<h3>Company Tie-Ups</h3>
-<p>Bulk hiring and HR coordination support.</p>
-</div>
-
-</div>
-
+  <div class="cards">
+    <div class="card tilt-card"><h3>IT Technical Hiring</h3><p>Cloud, Azure, software support, cybersecurity, testing and technical roles.</p></div>
+    <div class="card tilt-card"><h3>Non-Technical Hiring</h3><p>Voice, non-voice, BPO, customer support and operations roles.</p></div>
+    <div class="card tilt-card"><h3>Pharma Hiring</h3><p>Pharma, healthcare, medical process and support roles.</p></div>
+    <div class="card tilt-card"><h3>Company Tie-Ups</h3><p>Bulk hiring, fresher hiring, experienced hiring and HR coordination.</p></div>
+  </div>
 </section>
-
-<!-- GALLERY -->
 
 <section class="section reveal">
+  <h2>Corporate Gallery</h2>
 
-<h2>Corporate Gallery</h2>
-
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80">
-
-<img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80">
-
-<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80">
-
-<img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80">
-
-</div>
-
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Recruitment Team">
+    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80" alt="Corporate Office">
+    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Technology Office">
+    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80" alt="Business Meeting">
+  </div>
 </section>
 
-<!-- APPLY -->
+<section class="section dark reveal" id="jobs">
+  <h2>Live Job Openings</h2>
 
-<section class="section dark reveal" id="apply">
+  <div class="job-grid">
+    <div class="job-card tilt-card">
+      <span>IT Technical</span>
+      <h3>Technical Support Executive</h3>
+      <p>Location: Hyderabad</p>
+      <p>Experience: Freshers / Experienced</p>
+      <a href="#apply" class="btn gold">Apply Now</a>
+    </div>
 
-<h2>Candidate Application Form</h2>
+    <div class="job-card tilt-card">
+      <span>Non-IT</span>
+      <h3>Voice / Non-Voice Process</h3>
+      <p>Location: Hyderabad</p>
+      <p>Qualification: Any Graduate</p>
+      <a href="#apply" class="btn gold">Apply Now</a>
+    </div>
 
-<form class="form">
-
-<input placeholder="Full Name">
-
-<input placeholder="Phone Number">
-
-<input placeholder="Email ID">
-
-<select>
-<option>IT Technical</option>
-<option>Non Technical</option>
-<option>Pharma</option>
-<option>Healthcare</option>
-</select>
-
-<textarea placeholder="Experience / Requirement"></textarea>
-
-<button class="btn gold">
-Submit Application
-</button>
-
-</form>
-
+    <div class="job-card tilt-card">
+      <span>Pharma</span>
+      <h3>Healthcare Support Associate</h3>
+      <p>Location: Hyderabad</p>
+      <p>Role: Pharma / Medical Process</p>
+      <a href="#apply" class="btn gold">Apply Now</a>
+    </div>
+  </div>
 </section>
 
-<!-- CONTACT -->
+<section class="section reveal" id="careers">
+  <h2>Careers</h2>
 
-<section class="section reveal" id="contact">
-
-<h2>Contact VJ Solutions</h2>
-
-<div class="contact">
-
-<div>
-<h3>Founder</h3>
-<p>G Vijay Netha</p>
-</div>
-
-<div>
-<h3>Phone</h3>
-<p>+91 7729950118</p>
-</div>
-
-<div>
-<h3>Email</h3>
-<p>
-vjsolution.info@gmail.com
-</p>
-</div>
-
-<div>
-<h3>Location</h3>
-<p>Hyderabad</p>
-</div>
-
-</div>
-
-<div class="socials">
-
-<a href="https://www.instagram.com/vj_solutions__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-Instagram
-</a>
-
-<a href="https://www.facebook.com/profile.php?id=61553189472321">
-Facebook
-</a>
-
-<a href="https://linkedin.com/in/vj-solutions-63a4bb3a1">
-LinkedIn
-</a>
-
-<a href="https://t.me/vijay17777">
-Telegram
-</a>
-
-</div>
-
+  <div class="cards">
+    <div class="card tilt-card"><h3>IT Openings</h3><p>Technical support, cloud, cybersecurity, software and testing jobs.</p></div>
+    <div class="card tilt-card"><h3>Non-IT Openings</h3><p>Voice, non-voice, BPO and operations jobs.</p></div>
+    <div class="card tilt-card"><h3>Pharma Openings</h3><p>Healthcare and pharma process opportunities.</p></div>
+    <div class="card tilt-card"><h3>Freshers Hiring</h3><p>Daily verified fresher and experienced candidate openings.</p></div>
+  </div>
 </section>
 
-<!-- WHATSAPP -->
+<section class="section dark reveal" id="process">
+  <h2>Our Hiring Process</h2>
 
-<a class="whatsapp" href="https://wa.me/917729950118">
-WhatsApp
-</a>
+  <div class="timeline">
+    <div><span>01</span><h3>Register</h3><p>Candidate shares profile details.</p></div>
+    <div><span>02</span><h3>Screening</h3><p>We guide for HR screening and interview.</p></div>
+    <div><span>03</span><h3>Interview</h3><p>Candidate attends company interview process.</p></div>
+    <div><span>04</span><h3>Offer</h3><p>Offer discussion, documentation and onboarding.</p></div>
+  </div>
+</section>
+
+<section class="section reveal" id="premium-motion">
+  <h2>Premium Hiring Experience</h2>
+
+  <div class="premium-motion-grid">
+    <div class="motion-card tilt-card">
+      <div class="lottie-circle"><span></span><span></span><span></span></div>
+      <h3>Fast Candidate Movement</h3>
+      <p>From registration to HR screening and interview updates.</p>
+    </div>
+
+    <div class="motion-card tilt-card">
+      <div class="lottie-bars"><span></span><span></span><span></span><span></span></div>
+      <h3>Live Hiring Flow</h3>
+      <p>Structured process for IT, Non-IT, Pharma and BPO roles.</p>
+    </div>
+
+    <div class="motion-card tilt-card">
+      <div class="lottie-check"><span>✓</span></div>
+      <h3>Verified Opportunities</h3>
+      <p>Daily job updates and professional candidate coordination.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section dark reveal" id="testimonials">
+  <h2>Success Stories</h2>
+
+  <div class="testimonial-grid">
+    <div><p>“VJ Solutions guided me clearly for HR screening and interview process.”</p><h3>Placed Candidate</h3></div>
+    <div><p>“Daily job updates helped me apply faster for suitable openings.”</p><h3>Fresher Candidate</h3></div>
+    <div><p>“Professional coordination and quick communication from VJ Solutions.”</p><h3>Experienced Candidate</h3></div>
+  </div>
+</section>
+
+<section class="section reveal" id="apply">
+  <h2>Candidate Application Form</h2>
+
+  <form class="form" onsubmit="sendWhatsApp(event)">
+    <input id="name" placeholder="Full Name" required>
+    <input id="phone" placeholder="Phone Number" required>
+    <input id="email" placeholder="Email ID" required>
+
+    <select id="domain">
+      <option>IT Technical</option>
+      <option>Non-Technical</option>
+      <option>Pharma</option>
+      <option>Healthcare</option>
+      <option>BPO / Operations</option>
+    </select>
+
+    <textarea id="message" placeholder="Experience / Job Requirement"></textarea>
+    <button class="btn gold">Submit on WhatsApp</button>
+  </form>
+</section>
+
+<section class="section dark reveal" id="tieup">
+  <h2>Company Tie-Up With VJ Solutions</h2>
+
+  <div class="glass">
+    <p>
+      We are open for partnerships with companies, HR teams, consultancies and
+      hiring managers for bulk hiring, fresher hiring and experienced hiring.
+    </p>
+    <a href="mailto:vjsolution.info@gmail.com" class="btn gold">Send Tie-Up Mail</a>
+  </div>
+</section>
+
+<section class="section reveal" id="updates">
+  <h2>Daily Verified Job Updates</h2>
+
+  <div class="glass">
+    <p>
+      Follow VJ Solutions for daily verified IT & Non-IT job opportunities.
+      We share latest openings, referrals and hiring updates every day to help candidates get placed faster.
+    </p>
+
+    <div class="socials">
+      <a href="https://whatsapp.com/channel/0029Vb7YMv4LtOj5oHBnzo13" target="_blank">WhatsApp Channel</a>
+      <a href="https://chat.whatsapp.com/Hj4wCQNqktPADPXjANz5XY" target="_blank">WhatsApp Community</a>
+      <a href="https://t.me/vijay17777" target="_blank">Telegram</a>
+    </div>
+  </div>
+</section>
+
+<section class="section dark reveal" id="contact">
+  <h2>Contact VJ Solutions</h2>
+
+  <div class="contact">
+    <div><h3>Founder</h3><p>G Vijay Netha</p></div>
+    <div><h3>Phone</h3><p>+91 7729950118</p></div>
+    <div><h3>Email</h3><p>vjsolution.info@gmail.com<br>info@vjsolutionsgroup.com</p></div>
+    <div><h3>Location</h3><p>Hyderabad, Telangana</p></div>
+  </div>
+
+  <div class="socials">
+    <a href="https://www.instagram.com/vj_solutions__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61553189472321" target="_blank">Facebook</a>
+    <a href="https://linkedin.com/in/vj-solutions-63a4bb3a1" target="_blank">LinkedIn</a>
+    <a href="https://t.me/vijay17777" target="_blank">Telegram</a>
+  </div>
+</section>
+
+<button class="chat-open" onclick="toggleChat()">AI Chat</button>
+
+<div class="chatbox" id="chatbox">
+  <div class="chat-head">
+    <b>VJ AI Assistant</b>
+    <button onclick="toggleChat()">×</button>
+  </div>
+
+  <div class="chat-body" id="chatBody">
+    <p><b>AI:</b> Hi! I can help with jobs, applications, interview process and company tie-ups.</p>
+  </div>
+
+  <div class="chat-input">
+    <input id="chatInput" placeholder="Type your question...">
+    <button onclick="sendChat()">Send</button>
+  </div>
+</div>
+
+<a class="whatsapp" href="https://wa.me/917729950118" target="_blank">💬 WhatsApp</a>
+<a class="apply-float" href="#apply">🚀 Apply Now</a>
+
+<footer>
+  <img src="assets/vj-logo.png" alt="VJ Solutions">
+  <p>© 2026 VJ Solutions | Talent With Vision | Hyderabad</p>
+</footer>
 
 <script>
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("active");
+}
+
+function toggleTheme(){
+  document.body.classList.toggle("light");
+}
+
+window.onload = () => {
+  document.getElementById("loader").style.display = "none";
+};
+
+const words = ["Talent With Vision", "Companies With Talent", "Careers With Confidence"];
+let i = 0, j = 0, del = false;
+
+function type(){
+  const t = document.getElementById("typing");
+  let word = words[i];
+  t.innerHTML = word.substring(0, j);
+
+  if(!del && j++ === word.length) del = true;
+  if(del && j-- === 0){
+    del = false;
+    i = (i + 1) % words.length;
+  }
+
+  setTimeout(type, del ? 70 : 120);
+}
+type();
+
+function revealSections(){
+  document.querySelectorAll(".reveal").forEach(el => {
+    if(el.getBoundingClientRect().top < window.innerHeight - 100){
+      el.classList.add("active");
+    }
+  });
+}
+window.addEventListener("scroll", revealSections);
+revealSections();
+
+document.querySelectorAll("[data-count]").forEach(counter => {
+  let target = +counter.dataset.count;
+  let count = 0;
+
+  let run = setInterval(() => {
+    count += Math.ceil(target / 80);
+
+    if(count >= target){
+      count = target;
+      clearInterval(run);
+    }
+
+    counter.innerText = count + "+";
+  }, 25);
+});
+
+function sendWhatsApp(e){
+  e.preventDefault();
+
+  let text =
+    `New Candidate Application%0A` +
+    `Name: ${document.getElementById("name").value}%0A` +
+    `Phone: ${document.getElementById("phone").value}%0A` +
+    `Email: ${document.getElementById("email").value}%0A` +
+    `Domain: ${document.getElementById("domain").value}%0A` +
+    `Message: ${document.getElementById("message").value}`;
+
+  window.open(`https://wa.me/917729950118?text=${text}`, "_blank");
+}
+
 function toggleChat(){
   document.getElementById("chatbox").classList.toggle("active");
 }
@@ -466,112 +489,38 @@ function sendChat(){
   input.value = "";
   body.scrollTop = body.scrollHeight;
 }
-function toggleMenu(){
-document.getElementById("navMenu").classList.toggle("active");
-}
-
-function toggleTheme(){
-document.body.classList.toggle("light");
-}
-
-window.onload = () => {
-document.getElementById("loader").style.display = "none";
-};
-
-const words = [
-"Talent With Vision",
-"Companies With Talent",
-"Careers With Confidence"
-];
-
-let i = 0;
-let j = 0;
-let del = false;
-
-function type(){
-
-const t = document.getElementById("typing");
-
-let word = words[i];
-
-t.innerHTML = word.substring(0,j);
-
-if(!del && j++ === word.length){
-del = true;
-}
-
-if(del && j-- === 0){
-del = false;
-i = (i + 1) % words.length;
-}
-
-setTimeout(type, del ? 70 : 120);
-
-}
-
-type();
 
 window.addEventListener("scroll", () => {
-
-document.querySelectorAll(".reveal").forEach(el => {
-
-if(el.getBoundingClientRect().top < window.innerHeight - 100){
-
-el.classList.add("active");
-
-}
-
-});
-
-});
-
-window.addEventListener("scroll", () => {
-
-let winScroll =
-document.documentElement.scrollTop ||
-document.body.scrollTop;
-
-let height =
-document.documentElement.scrollHeight -
-document.documentElement.clientHeight;
-
-let scrolled = (winScroll / height) * 100;
-
-document.getElementById("scrollProgress").style.width =
-scrolled + "%";
-
+  let winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.getElementById("scrollProgress").style.width = scrolled + "%";
 });
 
 const cursorGlow = document.getElementById("cursorGlow");
 
 document.addEventListener("mousemove", (e) => {
-
-cursorGlow.style.left = e.clientX + "px";
-
-cursorGlow.style.top = e.clientY + "px";
-
+  cursorGlow.style.left = e.clientX + "px";
+  cursorGlow.style.top = e.clientY + "px";
 });
 
+document.querySelectorAll(".tilt-card").forEach(card => {
+  card.addEventListener("mousemove", e => {
+    let rect = card.getBoundingClientRect();
+    let x = e.clientX - rect.left;
+    let y = e.clientY - rect.top;
+
+    let rotateX = ((y / rect.height) - 0.5) * -14;
+    let rotateY = ((x / rect.width) - 0.5) * 14;
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "rotateX(0deg) rotateY(0deg)";
+  });
+});
 </script>
-<button class="chat-open" onclick="toggleChat()">AI Chat</button>
 
-<div class="chatbox" id="chatbox">
-  <div class="chat-head">
-    <b>VJ AI Assistant</b>
-    <button onclick="toggleChat()">×</button>
-  </div>
-
-  <div class="chat-body" id="chatBody">
-    <p><b>AI:</b> Hi! I can help with jobs, applications, interview process and company tie-ups.</p>
-  </div>
-
-  <div class="chat-input">
-    <input id="chatInput" placeholder="Type your question...">
-    <button onclick="sendChat()">Send</button>
-  </div>
-</div>
-
-<a class="whatsapp" href="https://wa.me/917729950118" target="_blank">💬 WhatsApp</a>
-<a class="apply-float" href="#apply">🚀 Apply Now</a>
 </body>
 </html>
