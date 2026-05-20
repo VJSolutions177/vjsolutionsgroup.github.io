@@ -236,7 +236,7 @@
 <section class="section reveal" id="apply">
   <h2>Candidate Application Form</h2>
 
-  <form class="form" onsubmit="sendWhatsApp(event)">
+ <form class="form" onsubmit="sendApplicationToSheet(event)">
     <input id="name" placeholder="Full Name" required>
     <input id="phone" placeholder="Phone Number" required>
     <input id="email" placeholder="Email ID" required>
@@ -647,6 +647,30 @@ document.addEventListener("mousemove", (e) => {
     cursorGlow.style.top = e.clientY + "px";
   }
 });
+
+  function sendApplicationToSheet(e){
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    email: document.getElementById("email").value,
+    domain: document.getElementById("domain").value,
+    message: document.getElementById("message").value
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbyfXxSNsgfIi1MbdO2roq8klKnf5Nbs2ceToxqpdohL_FxXAuCUnRS7yWuBr9pzGaVa/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    alert("Application submitted successfully. VJ Solutions will contact you soon.");
+    e.target.reset();
+  })
+  .catch(() => {
+    alert("Submission failed. Please contact us on WhatsApp.");
+  });
+}
 </script>
 
 </body>
