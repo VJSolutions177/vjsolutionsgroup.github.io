@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Candidate Login | VJ Solutions</title>
+  <style>
+    body{margin:0;font-family:Arial;background:#050505;color:white;display:flex;align-items:center;justify-content:center;height:100vh}
+    .box{background:#111;padding:35px;border-radius:20px;border:1px solid #d4af37;width:350px;text-align:center}
+    h2{color:#d4af37}
+    input{width:100%;padding:13px;margin:10px 0;border-radius:8px;border:none}
+    button{width:100%;padding:13px;background:#d4af37;color:#000;border:none;border-radius:8px;font-weight:bold}
+    a{color:#d4af37}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Candidate Login</h2>
+    <p>Enter your registered phone number.</p>
+    <input id="phone" placeholder="Phone Number">
+    <button onclick="checkStatus()">Check Status</button>
+    <p id="result"></p>
+    <a href="index.html">Back to Home</a>
+  </div>
+
+  <script>
+    function checkStatus(){
+      let phone = document.getElementById("phone").value;
+      if(phone.length < 10){
+        document.getElementById("result").innerText = "Please enter valid phone number.";
+      } else {
+        document.getElementById("result").innerText = "Your request is received. Please WhatsApp VJ Solutions for latest status.";
+      }
+    }
+  </script>
+</body>
+</html>
