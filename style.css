@@ -196,3 +196,32 @@ textarea{min-height:120px}
   .apply-float{left:15px;bottom:22px}
   .call-float{left:15px;bottom:85px}
 }
+.gold-glow {
+  animation: goldGlow 2s infinite alternate;
+}
+
+@keyframes goldGlow {
+  from {
+    box-shadow: 0 0 10px rgba(212,175,55,0.3);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(212,175,55,0.9);
+  }
+}
+
+.btn.gold {
+  animation: softPulse 2.5s infinite;
+}
+
+@keyframes softPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+.card:hover,
+.job-card:hover,
+.animated-icon-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  transition: 0.3s ease;
+}
