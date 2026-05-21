@@ -609,45 +609,25 @@ function sendChat(){
 
   body.innerHTML += `<p><b>You:</b> ${msg}</p>`;
 
-  let reply = "Please contact VJ Solutions on WhatsApp: +91 7729950118 for faster support.";
+  let lower = msg.toLowerCase();
+  let reply = "Please contact VJ Solutions on WhatsApp: +91 7729950118 for quick support.";
 
-  if(msg.toLowerCase().includes("job")){
-    reply = "We share verified IT, Non-IT, Pharma and fresher job updates daily. Join our WhatsApp Channel.";
-  }
-
-  if(msg.toLowerCase().includes("interview")){
-    reply = "VJ Solutions supports HR screening, virtual interview and face-to-face interview coordination.";
-  }
-
-  if(msg.toLowerCase().includes("apply")){
-    reply = "Go to the Apply section and submit your details. You can also WhatsApp us directly.";
-  }
-
-  if(msg.toLowerCase().includes("tie")){
-    reply = "For company tie-ups, mail vjsolution.info@gmail.com or contact +91 7729950118.";
+  if(lower.includes("job") || lower.includes("opening")){
+    reply = "We provide verified IT, Non-IT, BPO, Pharma and Healthcare job updates. Please fill the application form or contact us on WhatsApp.";
+  } else if(lower.includes("resume")){
+    reply = "Please upload or send your updated resume through WhatsApp. Make sure your phone number and email are correct.";
+  } else if(lower.includes("interview")){
+    reply = "We support HR screening, virtual interviews and face-to-face interview coordination.";
+  } else if(lower.includes("status")){
+    reply = "To check your application status, please WhatsApp your registered phone number to VJ Solutions.";
+  } else if(lower.includes("company") || lower.includes("tie")){
+    reply = "For company tie-ups or bulk hiring, contact vjsolution.info@gmail.com or WhatsApp +91 7729950118.";
   }
 
   body.innerHTML += `<p><b>AI:</b> ${reply}</p>`;
   input.value = "";
   body.scrollTop = body.scrollHeight;
 }
-
-window.addEventListener("scroll", () => {
-  let winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  let scrolled = (winScroll / height) * 100;
-  document.getElementById("scrollProgress").style.width = scrolled + "%";
-});
-
-const cursorGlow = document.getElementById("cursorGlow");
-
-document.addEventListener("mousemove", (e) => {
-  if(cursorGlow){
-    cursorGlow.style.left = e.clientX + "px";
-    cursorGlow.style.top = e.clientY + "px";
-  }
-});
-
   function sendApplicationToSheet(e){
   e.preventDefault();
 
