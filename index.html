@@ -659,7 +659,7 @@ document.addEventListener("mousemove", (e) => {
     message: document.getElementById("message").value
   };
 
-  fetch("https://docs.google.com/spreadsheets/d/1gZc9n97-4V2_EOi6-TExTkqsfGOevcifpoWpcntq2yA/edit?gid=0#gid=0", {
+  fetch("https://docs.google.com/spreadsheets/d/1gZc9n97-4V2_EOi6-TExTkqsfGOevcifpoWpcntq2yA/edit?usp=sharing, {
     method: "POST",
     body: JSON.stringify(data)
   })
