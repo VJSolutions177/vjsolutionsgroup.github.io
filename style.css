@@ -1110,3 +1110,88 @@ a {
     height: 220px;
   }
 }
+
+/* =========================================================
+   PROFESSIONAL RESUME APPLICATION FORM UPGRADE
+========================================================= */
+.section-subtitle {
+  max-width: 720px;
+  margin: -28px auto 32px;
+  text-align: center;
+  color: #cfcfcf;
+}
+
+.application-form {
+  max-width: 900px;
+  padding: 34px;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(212,175,55,0.12), transparent 35%),
+    linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+  box-shadow: 0 22px 60px rgba(0,0,0,0.35);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.application-form input,
+.application-form textarea,
+.application-form select {
+  margin-bottom: 16px;
+}
+
+.resume-upload-card {
+  border: 1px dashed rgba(212,175,55,0.55);
+  border-radius: 22px;
+  padding: 28px;
+  margin: 8px 0 20px;
+  text-align: center;
+  background: rgba(212,175,55,0.07);
+}
+
+.resume-upload-card h3 {
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.resume-upload-card p {
+  margin-bottom: 10px;
+  color: #cfcfcf;
+}
+
+.submit-btn {
+  width: 100%;
+  font-size: 16px;
+}
+
+.form-status {
+  margin-top: 16px;
+  text-align: center;
+  font-weight: 700;
+  min-height: 26px;
+}
+
+.form-status.loading { color: #fff1a8; }
+.form-status.success { color: #44d27a; }
+.form-status.error { color: #ff6b6b; }
+
+body.light .application-form,
+body.light .resume-upload-card {
+  background: #ffffff;
+  color: #111;
+}
+
+@media (max-width: 700px) {
+  .application-form {
+    padding: 22px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
