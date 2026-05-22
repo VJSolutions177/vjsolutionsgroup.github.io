@@ -1321,3 +1321,40 @@ body.light .resume-upload-card {
     width: 48px;
   }
 }
+.vj-3d-float {
+  animation: vjFloat3D 2s ease-in-out infinite !important;
+}
+
+.gold-flash {
+  opacity: 1 !important;
+}
+
+.card:hover,
+.job-card:hover,
+.filter-job-card:hover,
+.resume-upload-card:hover {
+  transform: translateY(-12px) scale(1.03) rotateX(5deg);
+  transition: 0.4s;
+}
+
+.whatsapp,
+.call-float,
+.apply-float {
+  animation: floatingButtons 1.5s ease-in-out infinite !important;
+}
+
+.hero::before {
+  animation: heroGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+  from {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
