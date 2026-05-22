@@ -83,7 +83,7 @@
   </nav>
 </header>
 
-<section class="hero" id="home">
+<section class="hero" id="home">upload
   <div class="gold-particles"></div>
 
   <div class="hero-left reveal">
@@ -265,23 +265,60 @@
   </form>
 </section>
 
-<section class="section dark reveal" id="resume-upload">
-  <h2>Upload Your Resume</h2>
+<form id="applyForm">
+  <input type="text" name="name" placeholder="Full Name" required>
+  <input type="tel" name="phone" placeholder="Phone Number" required>
+  <input type="email" name="email" placeholder="Email ID" required>
+  <input type="text" name="qualification" placeholder="Qualification" required>
+  <input type="text" name="jobRole" placeholder="Job Role Applying For" required>
+  <textarea name="message" placeholder="Message"></textarea>
 
-  <div class="upload-box">
-    <div class="upload-icon">📄</div>
-    <h3>Candidate Resume Submission</h3>
-    <p>Upload your updated resume for faster screening and job matching.</p>
+  <label>Upload Resume</label>
+  <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
 
-    <label for="resumeFile" class="upload-label">Choose Resume</label>
-    <input type="file" id="resumeFile" accept=".pdf,.doc,.docx">
+  <button type="submit">Submit Application</button>
+</form>
 
-    <p id="fileName" class="file-name">No file selected</p>
+<p id="formStatus"></p>
 
-    <a href="https://wa.me/917729950118" target="_blank" class="btn gold">Send Resume on WhatsApp</a>
-  </div>
-</section>
+<script>
+document.getElementById("applyForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
+  const form = e.target;
+  const file = form.resume.files[0];
+  const reader = new FileReader();
+
+  document.getElementById("formStatus").innerText = "Submitting...";
+
+  reader.onload = function() {
+    const data = {
+      name: form.name.value,
+      phone: form.phone.value,
+      email: form.email.value,
+      qualification: form.qualification.value,
+      jobRole: form.jobRole.value,
+      message: form.message.value,
+      resumeName: file.name,
+      resumeType: file.type,
+      resumeBase64: reader.result
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbzYmUsHNBrlMFGNDw2Aj0WGTDTKsXi9MZ3ebplfU8QxAmPfeUvNesf4p_YpdC_g5jLrwg/exec", {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(data)
+    });
+
+    document.getElementById("formStatus").innerText =
+      "Thank you for applying with VJ SOLUTIONS. Our HR team will contact you shortly.";
+
+    form.reset();
+  };
+
+  reader.readAsDataURL(file);
+});
+</script>
 <section class="section reveal" id="recruiter-form">
   <h2>Recruiter Partnership Form</h2>
 
