@@ -467,5 +467,66 @@
 <a class="apply-float" href="#apply">🚀 Apply Now</a>
 
 <script src="script.js"></script>
+  <script>
+const applyForm = document.getElementById("applyForm");
+
+if(applyForm){
+
+  const resumeInput = document.getElementById("resumeFile");
+
+  resumeInput.addEventListener("change", function(){
+    document.getElementById("fileName").innerText =
+      this.files.length ? this.files[0].name : "No file selected";
+  });
+
+  applyForm.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const formStatus = document.getElementById("formStatus");
+    const file = resumeInput.files[0];
+
+    if(!file){
+      formStatus.innerText = "Please upload resume.";
+      return;
+    }
+
+    formStatus.innerText = "Uploading Resume...";
+
+    const reader = new FileReader();
+
+    reader.onload = function(){
+
+      const data = {
+        name: applyForm.name.value,
+        phone: applyForm.phone.value,
+        email: applyForm.email.value,
+        qualification: applyForm.qualification.value,
+        jobRole: applyForm.jobRole.value,
+        message: applyForm.message.value,
+        resumeName: file.name,
+        resumeType: file.type,
+        resumeBase64: reader.result
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbzYmUsHNBrlMFGNDw2Aj0WGTDTKsXi9MZ3ebplfU8QxAmPfeUvNesf4p_YpdC_g5jLrwg/exec", {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify(data)
+      });
+
+      formStatus.innerText =
+      "Application submitted successfully.";
+
+      applyForm.reset();
+
+      document.getElementById("fileName").innerText =
+      "No file selected";
+    };
+
+    reader.readAsDataURL(file);
+  });
+
+}
+</script>
 </body>
 </html>
