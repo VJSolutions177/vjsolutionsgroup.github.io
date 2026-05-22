@@ -534,5 +534,22 @@ if(applyForm){
 
 }
 </script>
+  <script>
+document.addEventListener("mousemove", function(e){
+  const glow = document.getElementById("cursorGlow");
+  if(glow){
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
+  }
+});
+
+window.addEventListener("scroll", function(){
+  const progress = document.getElementById("scrollProgress");
+  if(progress){
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (window.scrollY / total) * 100 + "%";
+  }
+});
+</script>
 </body>
 </html>
