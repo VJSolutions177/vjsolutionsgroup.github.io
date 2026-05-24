@@ -1,0 +1,23 @@
+<section id="latest-jobs">
+  <h2>Latest Job Updates</h2>
+  <div id="jobs"></div>
+</section>
+
+<script>
+fetch("YOUR_GOOGLE_SHEET_API_URL")
+  .then(res => res.json())
+  .then(data => {
+    const jobsDiv = document.getElementById("jobs");
+    data.forEach(job => {
+      jobsDiv.innerHTML += `
+        <div class="job-card">
+          <h3>${job.company}</h3>
+          <p>${job.role}</p>
+          <p>${job.location}</p>
+          <p>${job.salary}</p>
+          <a href="https://wa.me/917729950118" target="_blank">Apply on WhatsApp</a>
+        </div>
+      `;
+    });
+  });
+</script>
