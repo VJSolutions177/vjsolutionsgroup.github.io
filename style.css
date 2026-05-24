@@ -1358,3 +1358,135 @@ body.light .resume-upload-card {
     opacity: 1;
   }
 }
+/* PREMIUM GLOSSY VJ EFFECTS */
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(212,175,55,0.18), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(212,175,55,0.12), transparent 35%),
+    #050505;
+}
+
+.navbar {
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(212,175,55,0.35);
+  box-shadow: 0 8px 35px rgba(212,175,55,0.12);
+}
+
+.logo img {
+  animation: vjPulse 2.5s infinite ease-in-out;
+  filter: drop-shadow(0 0 16px rgba(212,175,55,0.75));
+}
+
+@keyframes vjPulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.12) rotate(3deg); }
+}
+
+.hero {
+  background:
+    linear-gradient(135deg, rgba(0,0,0,0.95), rgba(25,20,5,0.95)),
+    radial-gradient(circle, rgba(212,175,55,0.25), transparent 45%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(212,175,55,0.35), transparent 70%);
+  top: 10%;
+  right: -120px;
+  filter: blur(25px);
+  animation: goldFloat 5s infinite alternate ease-in-out;
+}
+
+@keyframes goldFloat {
+  from { transform: translateY(0); }
+  to { transform: translateY(45px); }
+}
+
+.card,
+.job-card,
+.animated-icon-card,
+.glass,
+.policy-grid div,
+.contact div,
+.faq-left-card,
+.premium-faq-item {
+  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(212,175,55,0.08));
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(212,175,55,0.35);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.45), inset 0 0 18px rgba(255,255,255,0.04);
+  transition: 0.35s ease;
+}
+
+.card:hover,
+.job-card:hover,
+.animated-icon-card:hover,
+.premium-faq-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 18px 45px rgba(212,175,55,0.28);
+}
+
+.btn,
+.apply-btn,
+.community-btn,
+.theme-btn,
+button {
+  box-shadow: 0 8px 20px rgba(212,175,55,0.35);
+  transition: 0.3s ease;
+}
+
+.btn:hover,
+.apply-btn:hover,
+.community-btn:hover,
+.theme-btn:hover,
+button:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 14px 35px rgba(212,175,55,0.55);
+}
+
+.whatsapp,
+.call-float,
+.apply-float,
+.chat-open {
+  animation: floatButton 2.2s infinite ease-in-out;
+  box-shadow: 0 0 25px rgba(212,175,55,0.6);
+}
+
+@keyframes floatButton {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.orbit img {
+  animation: logoSpinGlow 6s infinite linear;
+  filter: drop-shadow(0 0 25px rgba(212,175,55,0.9));
+}
+
+@keyframes logoSpinGlow {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.08); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+section {
+  position: relative;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.04), transparent);
+  animation: shineMove 5s infinite linear;
+}
+
+@keyframes shineMove {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
