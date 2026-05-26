@@ -1490,3 +1490,92 @@ section::after {
   from { transform: translateX(-100%); }
   to { transform: translateX(100%); }
 }
+/* VJ SAFE SUPER GLOW EFFECTS */
+
+:root{
+  --vj-gold:#d4af37;
+  --vj-glow:rgba(212,175,55,.55);
+}
+
+/* Shining buttons */
+.btn,
+button,
+.theme-btn,
+.apply-float,
+.call-float,
+.chat-open{
+  position:relative;
+  overflow:hidden;
+  border-radius:999px;
+  box-shadow:0 0 18px var(--vj-glow);
+  transition:.25s ease;
+}
+
+.btn:hover,
+button:hover,
+.theme-btn:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 0 28px var(--vj-glow), 0 0 55px rgba(212,175,55,.25);
+}
+
+.btn::after,
+button::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-80%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.65),transparent);
+  animation:vjShine 3.5s infinite;
+}
+
+@keyframes vjShine{
+  0%{left:-80%}
+  45%{left:130%}
+  100%{left:130%}
+}
+
+/* Round logo/icon animation */
+.logo img,
+.orbit img{
+  border-radius:50%;
+  animation:vjRoundGlow 4s ease-in-out infinite;
+  filter:drop-shadow(0 0 18px var(--vj-glow));
+}
+
+@keyframes vjRoundGlow{
+  0%,100%{transform:scale(1) rotate(0deg)}
+  50%{transform:scale(1.08) rotate(6deg)}
+}
+
+/* Glowing cards */
+.card,
+.job-card,
+.filter-job-card,
+.animated-icon-card,
+.contact div{
+  border:1px solid rgba(212,175,55,.35);
+  box-shadow:0 0 18px rgba(212,175,55,.12);
+  transition:.28s ease;
+}
+
+.card:hover,
+.job-card:hover,
+.filter-job-card:hover,
+.animated-icon-card:hover,
+.contact div:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 25px rgba(212,175,55,.32);
+}
+
+/* Mobile safe */
+@media(max-width:768px){
+  *{
+    animation-duration:4s !important;
+  }
+  .cursor-glow,
+  .gold-flash{
+    display:none !important;
+  }
+}
