@@ -1358,224 +1358,90 @@ body.light .resume-upload-card {
     opacity: 1;
   }
 }
-/* PREMIUM GLOSSY VJ EFFECTS */
+/* VJ SOLUTIONS - SMOOTH PREMIUM FIX */
+
+.cursor-glow,
+.gold-flash,
+section::after {
+  display: none !important;
+}
+
+* {
+  scroll-behavior: smooth;
+}
 
 body {
   background:
-    radial-gradient(circle at top left, rgba(212,175,55,0.18), transparent 35%),
-    radial-gradient(circle at bottom right, rgba(212,175,55,0.12), transparent 35%),
-    #050505;
+    radial-gradient(circle at top, rgba(212,175,55,0.14), transparent 35%),
+    #050505 !important;
 }
 
 .navbar {
-  background: rgba(0,0,0,0.72);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(212,175,55,0.35);
-  box-shadow: 0 8px 35px rgba(212,175,55,0.12);
+  backdrop-filter: none !important;
+  background: rgba(0,0,0,0.92) !important;
 }
 
 .logo img {
-  animation: vjPulse 2.5s infinite ease-in-out;
-  filter: drop-shadow(0 0 16px rgba(212,175,55,0.75));
+  animation: smoothLogoGlow 3s ease-in-out infinite !important;
+  filter: drop-shadow(0 0 14px rgba(212,175,55,0.75));
 }
 
-@keyframes vjPulse {
+@keyframes smoothLogoGlow {
   0%,100% { transform: scale(1); }
-  50% { transform: scale(1.12) rotate(3deg); }
-}
-
-.hero {
-  background:
-    linear-gradient(135deg, rgba(0,0,0,0.95), rgba(25,20,5,0.95)),
-    radial-gradient(circle, rgba(212,175,55,0.25), transparent 45%);
-  overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(212,175,55,0.35), transparent 70%);
-  top: 10%;
-  right: -120px;
-  filter: blur(25px);
-  animation: goldFloat 5s infinite alternate ease-in-out;
-}
-
-@keyframes goldFloat {
-  from { transform: translateY(0); }
-  to { transform: translateY(45px); }
-}
-
-.card,
-.job-card,
-.animated-icon-card,
-.glass,
-.policy-grid div,
-.contact div,
-.faq-left-card,
-.premium-faq-item {
-  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(212,175,55,0.08));
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(212,175,55,0.35);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.45), inset 0 0 18px rgba(255,255,255,0.04);
-  transition: 0.35s ease;
-}
-
-.card:hover,
-.job-card:hover,
-.animated-icon-card:hover,
-.premium-faq-item:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 18px 45px rgba(212,175,55,0.28);
+  50% { transform: scale(1.07); }
 }
 
 .btn,
-.apply-btn,
-.community-btn,
-.theme-btn,
-button {
-  box-shadow: 0 8px 20px rgba(212,175,55,0.35);
-  transition: 0.3s ease;
-}
-
-.btn:hover,
-.apply-btn:hover,
-.community-btn:hover,
-.theme-btn:hover,
-button:hover {
-  transform: translateY(-4px) scale(1.04);
-  box-shadow: 0 14px 35px rgba(212,175,55,0.55);
-}
-
+button,
 .whatsapp,
 .call-float,
 .apply-float,
 .chat-open {
-  animation: floatButton 2.2s infinite ease-in-out;
-  box-shadow: 0 0 25px rgba(212,175,55,0.6);
+  animation: none !important;
+  box-shadow: 0 0 16px rgba(212,175,55,0.45);
 }
 
-@keyframes floatButton {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+.btn.gold::after,
+button::after {
+  animation: smoothShine 4s linear infinite !important;
 }
 
-.orbit img {
-  animation: logoSpinGlow 6s infinite linear;
-  filter: drop-shadow(0 0 25px rgba(212,175,55,0.9));
+@keyframes smoothShine {
+  0% { left: -80%; }
+  45% { left: 130%; }
+  100% { left: 130%; }
 }
 
-@keyframes logoSpinGlow {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.08); }
-  100% { transform: rotate(360deg) scale(1); }
-}
-
-section {
-  position: relative;
-}
-
-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.04), transparent);
-  animation: shineMove 5s infinite linear;
-}
-
-@keyframes shineMove {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(100%); }
-}
-/* VJ SAFE SUPER GLOW EFFECTS */
-
-:root{
-  --vj-gold:#d4af37;
-  --vj-glow:rgba(212,175,55,.55);
-}
-
-/* Shining buttons */
-.btn,
-button,
-.theme-btn,
-.apply-float,
-.call-float,
-.chat-open{
-  position:relative;
-  overflow:hidden;
-  border-radius:999px;
-  box-shadow:0 0 18px var(--vj-glow);
-  transition:.25s ease;
-}
-
-.btn:hover,
-button:hover,
-.theme-btn:hover{
-  transform:translateY(-3px) scale(1.03);
-  box-shadow:0 0 28px var(--vj-glow), 0 0 55px rgba(212,175,55,.25);
-}
-
-.btn::after,
-button::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-80%;
-  width:50%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,.65),transparent);
-  animation:vjShine 3.5s infinite;
-}
-
-@keyframes vjShine{
-  0%{left:-80%}
-  45%{left:130%}
-  100%{left:130%}
-}
-
-/* Round logo/icon animation */
-.logo img,
-.orbit img{
-  border-radius:50%;
-  animation:vjRoundGlow 4s ease-in-out infinite;
-  filter:drop-shadow(0 0 18px var(--vj-glow));
-}
-
-@keyframes vjRoundGlow{
-  0%,100%{transform:scale(1) rotate(0deg)}
-  50%{transform:scale(1.08) rotate(6deg)}
-}
-
-/* Glowing cards */
 .card,
 .job-card,
 .filter-job-card,
 .animated-icon-card,
-.contact div{
-  border:1px solid rgba(212,175,55,.35);
-  box-shadow:0 0 18px rgba(212,175,55,.12);
-  transition:.28s ease;
+.contact div,
+.resume-upload-card {
+  transition: transform .25s ease, box-shadow .25s ease !important;
+  will-change: transform;
 }
 
 .card:hover,
 .job-card:hover,
 .filter-job-card:hover,
 .animated-icon-card:hover,
-.contact div:hover{
-  transform:translateY(-6px);
-  box-shadow:0 0 25px rgba(212,175,55,.32);
+.contact div:hover,
+.resume-upload-card:hover {
+  transform: translateY(-6px) scale(1.015) !important;
+  box-shadow: 0 0 22px rgba(212,175,55,0.28) !important;
 }
 
-/* Mobile safe */
-@media(max-width:768px){
-  *{
-    animation-duration:4s !important;
+.orbit img {
+  animation: smoothLogoGlow 4s ease-in-out infinite !important;
+}
+
+@media (max-width: 768px) {
+  * {
+    animation: none !important;
   }
-  .cursor-glow,
-  .gold-flash{
-    display:none !important;
+
+  .logo img {
+    animation: smoothLogoGlow 3s ease-in-out infinite !important;
   }
 }
