@@ -1445,3 +1445,109 @@ button::after {
     animation: smoothLogoGlow 3s ease-in-out infinite !important;
   }
 }
+/* DIGITAL PANDA STYLE - VJ SMOOTH VERSION */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  top: 22%;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,175,55,.45), transparent 65%);
+  filter: blur(8px);
+  animation: pandaFloat 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes pandaFloat {
+  0%,100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-28px) scale(1.08); }
+}
+
+.btn,
+button,
+.theme-btn {
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #d4af37, #fff2a8) !important;
+  color: #000 !important;
+  border: none !important;
+  font-weight: 900;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 22px rgba(212,175,55,.35);
+}
+
+.btn::before,
+button::before,
+.theme-btn::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: inherit;
+  border: 1px solid rgba(255,255,255,.5);
+  pointer-events: none;
+}
+
+.btn:hover,
+button:hover,
+.theme-btn:hover {
+  transform: translateY(-5px) scale(1.04);
+  box-shadow: 0 0 35px rgba(212,175,55,.65);
+}
+
+.card,
+.job-card,
+.filter-job-card,
+.animated-icon-card {
+  border-radius: 32px !important;
+  background:
+    radial-gradient(circle at top right, rgba(212,175,55,.18), transparent 35%),
+    rgba(255,255,255,.055) !important;
+  border: 1px solid rgba(212,175,55,.32) !important;
+}
+
+.card:hover,
+.job-card:hover,
+.filter-job-card:hover,
+.animated-icon-card:hover {
+  transform: translateY(-10px) rotate(-1deg) scale(1.02) !important;
+}
+
+.logo img,
+.orbit img {
+  animation: pandaLogo 5s ease-in-out infinite !important;
+}
+
+@keyframes pandaLogo {
+  0%,100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-14px) rotate(4deg); }
+}
+
+.rounded-text-vj {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 1px solid rgba(212,175,55,.4);
+  display: grid;
+  place-items: center;
+  animation: rotateTextVJ 22s linear infinite;
+}
+
+@keyframes rotateTextVJ {
+  to { transform: rotate(360deg); }
+}
+
+@media(max-width:768px){
+  .hero::after {
+    width: 150px;
+    height: 150px;
+    opacity: .6;
+  }
+}
