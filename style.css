@@ -487,24 +487,29 @@ a {
   background: rgba(255,255,255,0.03);
 }
 
-.logo-track {
-  display: flex;
-  gap: 42px;
-  width: max-content;
-  animation: logoSlide 22s linear infinite;
+.logo-track{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    width:max-content;
+    animation:logoSlide 22s linear infinite;
 }
 
-.logo-track span {
-  color: var(--gold);
-  font-weight: 800;
-  letter-spacing: 1px;
-  min-width: 150px;
-  text-align: center;
+.logo-track span{
+    flex-shrink:0;
+    font-size:20px;
+    font-weight:700;
+    color:#FFD700;
+    white-space:nowrap;
 }
 
-@keyframes logoSlide {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+@keyframes logoSlide{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-50%);
+    }
 }
 
 /* GALLERY */
