@@ -1437,13 +1437,22 @@ button::after {
 }
 
 @media (max-width: 768px) {
-  * {
-    animation: none !important;
-  }
 
+  /* Keep logo animation */
   .logo img {
     animation: smoothLogoGlow 3s ease-in-out infinite !important;
   }
+
+  /* Keep Hiring Network slider working */
+  .logo-track {
+    animation: logoSlide 22s linear infinite !important;
+  }
+
+  /* Keep Testimonials slider working */
+  .slider-track {
+    animation: testimonialSlide 25s linear infinite !important;
+  }
+
 }
 /* DIGITAL PANDA STYLE - VJ SMOOTH VERSION */
 
